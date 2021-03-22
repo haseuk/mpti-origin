@@ -1,5 +1,6 @@
 html {
   font-size: 0;
+  font-family: "score", arial, sans-serif;
   -webkit-text-size-adjust: none;
 }
 input,

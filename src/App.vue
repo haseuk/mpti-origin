@@ -17,4 +17,5 @@ export default {
 @import "~@/less/font";
 @import "~@/less/common";
 @import "~@/less/base";
+img { backface-visibility: hidden; }
 </style>
