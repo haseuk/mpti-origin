@@ -34,10 +34,10 @@
 
     <!-- ***** 팝업 *****-->
     <transition name="fade">
-      <div class="popup" v-if="matchedDoctors">
+      <div class="popup" v-if="matchedDoctors" :key="5">
         <div class="dim"></div>
         <div class="holder">
-          <div class="panel matcheddoctors">
+          <div class="panel matched-doctors">
             <a class="close" @click="matchedDoctors = false"></a>
             <p>{{ name }} 선생님의 과를 선택해주세요</p>
             <ul>
@@ -50,10 +50,10 @@
         </div>
       </div>
 
-      <div class="popup" v-else-if="noneCodePopup">
+      <div class="popup" v-else-if="noneCodePopup" :key="6">
         <div class="dim"></div>
         <div class="holder">
-          <div class="panel noneCodePopup">
+          <div class="panel none-code-popup">
             <a class="close" @click="noneCodePopup = false"></a>
             <p>입력하신 코드 및 의사가 없습니다.<br>
               다시 한번 확인 후 입력해주세요.</p>
@@ -61,10 +61,10 @@
         </div>
       </div>
 
-      <div class="popup" v-else-if="inputPopup">
+      <div class="popup" v-else-if="inputPopup" :key="7">
         <div class="dim"></div>
         <div class="holder">
-          <div class="panel inputPopup">
+          <div class="panel input-popup">
             <a class="close" @click="inputPopup = false"></a>
             <p>병원명, 과명, 성함을<br>
               모두 입력해주세요.</p>
@@ -179,12 +179,12 @@ export default {
 
 
 
-  .popup { opacity: 1; font-size: 40px; .f;
+  .popup { font-size: 40px; .f;
     .dim { .fix; .lt; width:100%; height:120%; background: rgba(0,0,0,0.6); z-index: 50; }
     .holder { .abs; .lt(50%,50%); transform: translate(-50%,-50%); z-index: 51;
       .panel { .fs(60); .bgc(#fff); .br(28); .lh(100); .tc; .regular; .ls(-1);
         .close { .contain('/img/close.png'); .no-repeat; .wh(101,103); .abs; .rt(-51,-51); .contain; z-index: 1; }
-        &.matcheddoctors { .fs(72); .w(1763); .min-h(957); .p(0,95,120); .-box;
+        &.matched-doctors { .fs(72); .w(1763); .min-h(957); .p(0,95,120); .-box;
           > p { .lh(260); .regular; }
           li { .medium; .-t(#7d7d7d); .p(25,0); .-box;
             &:last-child { .-b(#7d7d7d); }
@@ -192,7 +192,7 @@ export default {
             span { .fs(60); .bold; .ib; color:#fff; .vam; .lh(100); .w(250); .bgc(#1c25c5); .br(16); .fr; .mr(10); }
           }
         }
-        &.noneCodePopup, &.inputPopup { .wh(963,607);
+        &.none-code-popup, &.input-popup { .wh(963,607);
           p { .wf; .abs; .lt(50%,50%); transform: translate(-50%,-50%); }
         }
       }

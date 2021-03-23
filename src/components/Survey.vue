@@ -1,11 +1,12 @@
 <template>
-  <transition name="fade">
-    <div survey>
-      <div v-if="queBox" class="queBox">
+  <div survey>
+    <transition name="fade">
+      <div v-if="queBox" class="queBox" :key="1">
         <img :src="`/img/${que.qImg}`" alt="survey">
         <a @click="ansView" class="ans-view">다음</a>
       </div>
-      <div v-else>
+
+      <div v-else :key="2">
         <img :src="`/img/${que.aImg}`" alt="survey">
         <div class="input-box" :class="step" >
           <div class="inner">
@@ -18,8 +19,8 @@
           <a @click="nextQue">다음</a>
         </div>
       </div>
-    </div>
-  </transition>
+    </transition>
+  </div>
 </template>
 
 <script>
@@ -67,7 +68,10 @@ export default {
           ? this.que.examples[answer - 1].next
           : answer.map(n => this.que.examples[n - 1].next).find(x => x)
       if (n) return n;
-      // if (this.que.next === 'roulette') this.msg();
+      if (this.que.next === 'event') {
+        this.$router.push({ path: '/event', name: 'event', component: Event })
+        return;
+      }
       return this.que.next;
     },
   }
@@ -78,6 +82,7 @@ export default {
 @import "~@/less/asset";
 
   [survey] {
+    > div { .abs; .lt; }
     div a { .wh(486,134); .ib; .abs; .lt(755,1000); }
     .input-box { .abs; .lt; .f; .pl(120); .-box;
       .inner { .h(608); display: inline-flex; flex-direction: column; flex-wrap: wrap;
@@ -107,7 +112,7 @@ export default {
           input { .h(230); .lh(230); }
         }
       }
-      &.q2, &.q3, &.q5, &.q6, &.q7, &.q8, &.q10 { .pt(357);
+      &.q2, &.q3, &.q5, &.q6, &.q7, &.q8, &.q9, &.q10 { .pt(357);
         label { .mb(22);
           input { .h(130); .lh(130); }
           p { .fs(60); .l(80); }
@@ -133,7 +138,11 @@ export default {
         input { .w(1290); }
         p { .fs(45); }
       }
-      &.q8 a, &.q10 a { .lt(1445,966); }
+      &.q8 a, &.q9 a, &.q10 a { .lt(1445,966); }
+      &.q9 .inner label {
+        input { .w(1280); }
+        p { .fs(52); .ls(-2); }
+      }
     }
   }
 </style>

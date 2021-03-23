@@ -4,8 +4,9 @@
       <img src="/img/choice.png" alt="">
       <div class="list-box">
         <ul>
-          <li v-for="survey in surveys" :key="survey.month">
-            <RouterLink :to="`/survey/${survey.month}`"></RouterLink>
+          <li v-for="(q, month) in surveys" :key="month">
+            <RouterLink v-if="q" :to="`/survey/${month}`"></RouterLink>
+            <a v-else @click="notYet(month)"></a>
           </li>
         </ul>
       </div>
@@ -14,17 +15,19 @@
 </template>
 
 <script>
+import surveys from '@/data/queBoard';
+
 export default {
   name: "Choice",
 
   data() {
     return {
-      surveys: [
-        { month: 4 },
-        { month: 5 },
-        { month: 6 },
-        { month: 7 }
-      ]
+      surveys
+    }
+  },
+  methods: {
+    notYet(v) {
+      alert(`${v}월에 오픈 예정입니다.`);
     }
   }
 

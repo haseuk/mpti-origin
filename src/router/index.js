@@ -4,6 +4,7 @@ import Intro from "@/components/Intro";
 import Choice from "@/components/Choice";
 import Survey from "@/components/Survey";
 import Event from "@/components/Event";
+import Share from "@/components/Share";
 
 Vue.use(Router);
 
@@ -15,6 +16,7 @@ const router = new Router({
     { path: '/choice', name: 'choice', component: Choice },
     { path: '/survey/:month', name: 'survey', component: Survey },
     { path: '/event', name: 'event', component: Event },
+    { path: '/share', name: 'share', component: Share },
   ]
 });
 
