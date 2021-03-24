@@ -144,7 +144,7 @@ export default {
     },
     shareMove() {
       this.$router.push({ path: '/share', name: 'share', component: Share })
-    }
+    },
   }
 }
 </script>
