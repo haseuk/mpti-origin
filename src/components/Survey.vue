@@ -8,11 +8,11 @@
 
       <div v-else :key="2">
         <img :src="`/img/${que.aImg}`" alt="survey">
-        <div class="input-box" :class="step" >
+        <div class="input-box" :class="step">
           <div class="inner">
             <label v-for="(e, i) in que.examples" :key="i">
               <s class="num" :class="e.idx"></s>
-              <input :type="`${que.type}`" :value="i + 1" v-model="answer[step]">
+              <input :type="`${que.type}`" :value="i + 1" name="survey" v-model="answer[step]">
               <p v-html="e.label || e"></p>
             </label>
           </div>
@@ -25,6 +25,7 @@
 
 <script>
 import QueData from "@/data/queBoard";
+import axios from 'axios';
 
 export default {
   name: "Survey",
@@ -48,18 +49,36 @@ export default {
     },
     que() {
       return QueData[this.month][this.step];
+    },
+    doctor() {
+      return this.$store.state.doctor;
     }
   },
   methods: {
     ansView() {
       this.queBox = !this.queBox;
     },
-    nextQue() {
+    async nextQue() {
       if (!this.answer[this.step] || this.answer[this.step].length === 0) {
         alert('답변을 선택해주세요');
         return;
       }
-      this.step = this.getNext();
+      const step = this.getNext();
+      if (step === 'survey-finish') {
+        if (this.$store.state.completeSurvey[this.month]) {
+          await this.$router.push(`/share/${this.month}`);
+          return;
+        }
+        const { data } = await axios.post('/api/apply', {
+          doctor: this.doctor,
+          ep: this.month,
+          answers: this.answer
+        });
+        this.$store.commit('survey', data);
+        await this.$router.push(`/event/${this.month}`)
+      } else {
+        this.step = step;
+      }
     },
     getNext() {
       const answer = this.answer[this.step];
@@ -68,10 +87,6 @@ export default {
           ? this.que.examples[answer - 1].next
           : answer.map(n => this.que.examples[n - 1].next).find(x => x)
       if (n) return n;
-      if (this.que.next === 'event') {
-        this.$router.push({ path: '/event', name: 'event', component: Event })
-        return;
-      }
       return this.que.next;
     },
   }

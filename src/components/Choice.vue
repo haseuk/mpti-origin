@@ -5,7 +5,7 @@
       <div class="list-box">
         <ul>
           <li v-for="(q, month) in surveys" :key="month">
-            <RouterLink v-if="q" :to="`/survey/${month}`"></RouterLink>
+            <RouterLink v-if="q" :to="`/survey/${month}`" :class="{complete: checkComplete(month)}"></RouterLink>
             <a v-else @click="notYet(month)"></a>
           </li>
         </ul>
@@ -28,7 +28,10 @@ export default {
   methods: {
     notYet(v) {
       alert(`${v}월에 오픈 예정입니다.`);
-    }
+    },
+    checkComplete(month) {
+      return this.$store.state.completeSurvey[month];
+    },
   }
 
 }

@@ -3,13 +3,13 @@
     <transition name="fade">
       <div>
         <img src="/img/event.png" alt="">
-        <img src="/img/wheel.png" class="wheel" :class="{spin: rotation}" :style="spinValue">
+        <img src="/img/wheel.png" class="wheel" :style="spinValue">
         <img src="/img/arrow.png" class="arrow">
       </div>
     </transition>
 
     <transition name="fade">
-      <div class="popup event-popup" v-if="popup">
+      <div class="popup" v-if="eventPopup || giftPopup || boomPopup">
         <div class="dim"></div>
         <div class="holder">
           <div class="panel event-popup" v-if="eventPopup">
@@ -22,12 +22,13 @@
           </div>
 
           <div class="panel gift-popup" v-if="giftPopup">
-            <a class="close" @clcik="popup = false"></a>
+            <a class="close" @click="giftResolve()"></a>
             <img src="/img/gift.png" alt="">
+            {{ gift }}
           </div>
 
           <div class="panel boom-popup" v-if="boomPopup">
-            <a class="close" @clcik="popup = false"></a>
+            <a class="close" @click="boomResolve()"></a>
             <img src="/img/boom.png" alt="">
           </div>
         </div>
@@ -38,113 +39,96 @@
 </template>
 
 <script>
-import Share from "@/components/Share";
+// import axios from 'axios';
+
+import axios from "axios";
 
 export default {
   name: "event",
 
   data() {
     return {
-      rotation: false,
-      spinStartAngle: 0,
+      spinStartAngle: 360 * 3 - 22.5,
       spinTotal: 0,
-      spinCheck: false,
-      min: 1000,
-      max: 2000,
       options: [
         {id: 0, value: '2000'},
-        {id: 1, value: '3000'},
-        {id: 2, value: '4000'},
-        {id: 3, value: '5000'},
+        {id: 1, value: '1000'},
+        {id: 2, value: '꽝'},
+        {id: 3, value: '10000'},
         {id: 4, value: '10'},
-        {id: 5, value: '10000'},
-        {id: 6, value: '꽝'},
-        {id: 7, value: '1000'},
+        {id: 5, value: '5000'},
+        {id: 6, value: '4000'},
+        {id: 7, value: '3000'},
       ],
-      popup: true,
-      eventPopup: true,
+      eventPopup: false,
       giftPopup: false,
       boomPopup: false,
       phoneNum: '',
+      gift: null,
+      boomResolve: null,
+      giftResolve: null,
     }
   },
   computed: {
     spinValue() {
       return { transform: 'rotate('+this.spinTotal+'deg)'}
     },
-    makeRandom() {
-       return Math.floor(Math.random() * (this.max-this.min + 1)) + this.min;
+    month() {
+      return this.$route.params.month;
     },
   },
   methods: {
-    close() {
+    sleep(time) {
+      return new Promise(resolve => setTimeout(resolve, time));
     },
-    start() {
+    async start() {
       if(!this.phoneNum) {
         alert('연락처를 입력해주세요.');
         return;
       }
-      this.popup = false;
-      this.eventPopup = false;
-      if(this.spinCheck === true) {
-        alert('이미 이벤트에 참여 하였습니다.');
+      try {
+        const {data} = await axios.post('/api/scratch', this.$store.state.survey);
+        this.gift = data;
+      } catch (e) {
+        alert('이미 추첨이 완료된 설문입니다.');
+        location.href = '/';
         return;
       }
-      this.spinCheck = true;
-      this.rotation = !this.rotation;
-      this.spin();
+      this.eventPopup = false;
+      this.spinTotal = this.spinStartAngle + this.options.find(e => e.value === '' + this.gift).id * 45;
+      await this.sleep(6000);
+      await this.showResult();
+      this.shareMove();
+
     },
-    spin() {
-      this.spinTotal = this.spinStartAngle + this.makeRandom;
-      let self = this;
-      setTimeout(function() {
-        self.selectOption();
-      }, 5000)
-    },
-    selectOption() {
-      let text = Math.ceil((this.spinTotal / 45) % this.options.length);
-      switch (text) {
-        case 1:
-          alert('축하해' + this.options[7].value + '포인트');
-          this.shareMove();
-          break;
-        case 2:
-          this.boom();
-          this.shareMove();
-          break;
-        case 3:
-          alert('축하해' + this.options[5].value + '포인트');
-          this.shareMove();
-          break;
-        case 4:
-          alert('축하해' + this.options[4].value + '포인트');
-          this.shareMove();
-          break;
-        case 5:
-          this.shareMove();
-          alert('축하해' + this.options[3].value + '포인트');
-          break;
-        case 6:
-          alert('축하해' + this.options[2].value + '포인트');
-          this.shareMove();
-          break;
-        case 7:
-          alert('축하해' + this.options[1].value + '포인트');
-          this.shareMove();
-          break;
-        case 8:
-          alert('축하해' + this.options[0].value + '포인트');
-          this.shareMove();
-          break;
-      }
+    async showResult() {
+      if (this.gift === '꽝')
+        await this.boom();
+      else
+        await this.showGift();
     },
     boom() {
-      this.popup = true;
-      this.boomPopup = true;
+      return new Promise(resolve => {
+        this.boomResolve = resolve
+        this.boomPopup = true;
+      });
+    },
+    showGift() {
+      return new Promise(resolve => {
+        this.giftResolve = resolve
+        this.giftPopup = true;
+      });
     },
     shareMove() {
-      this.$router.push({ path: '/share', name: 'share', component: Share })
+      this.$router.push(`/share/${this.month}`);
     },
+  },
+  async mounted() {
+    if (!this.$store.state.survey) {
+      await this.$router.replace('/');
+      return;
+    }
+    this.eventPopup = true;
   }
 }
 </script>
@@ -153,10 +137,8 @@ export default {
 @import "~@/less/asset";
 
   [event] {
-    .wheel { .abs; .lt(1023,189);
-      &.spin { transition: 4s; transition-delay: 0.8s; transition-timing-function: ease; }
-    }
-    .arrow { .abs; .lt(1280,366); z-index: 1; }
+    .wheel { .abs; .lt(1023,189); transition: 4s; transition-delay: 0.8s; transition-timing-function: ease; }
+    .arrow { .abs; .lt(1280,366); }
 
     .popup { font-size: 40px; .f;
       .dim { .fix; .lt; width:100%; height:120%; background: rgba(0,0,0,0.6); z-index: 50; }

@@ -93,8 +93,8 @@ export default {
         {idx: 'd', label: '신뢰할 수 있는 회사 제품'},
         {idx: 'e', label: '기타'},
       ],
-      next: 'event',
-      type: 'checkbox',
+      next: 'survey-finish',
+      type: 'radio',
     },
     q9: {
       qImg: 'm4-s-9-1.png',
@@ -106,7 +106,7 @@ export default {
         {idx: 'd', label: '기타'},
       ],
       next: 'q10',
-      type: 'radio',
+      type: 'checkbox',
     },
     q10: {
       qImg: 'm4-s-10-1.png',
@@ -116,7 +116,7 @@ export default {
         {idx: 'b', label: '없다'},
         {idx: 'c', label: '잘 모르겠다'},
       ],
-      next: 'event',
+      next: 'survey-finish',
       type: 'radio',
     },
   },
