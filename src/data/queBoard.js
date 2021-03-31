@@ -1,6 +1,7 @@
 export default {
-  4: {
+  202104: {
     q1: {
+      part: { num: 1_1, q: '난생 첫 고혈압을 진단을 받은 아래의 환자, 이 환자에게 어떤 관리 조치를 할 예정이십니까?' },
       qImg: 'm4-s-1-1.png',
       aImg: 'm4-s-1-2.png',
       examples: [
@@ -10,6 +11,7 @@ export default {
       type: 'radio',
     },
     q2: {
+      part: { num: 1_2, q: '왜 혈압강하제 처방을 먼저 고려하셨나요?' },
       qImg: 'm4-s-2-1.png',
       aImg: 'm4-s-2-2.png',
       examples: [
@@ -22,6 +24,7 @@ export default {
       type: 'checkbox',
     },
     q3: {
+      part: { num: 1_2, q: '왜 생활습관 개선을 먼저 권하셨나요?' },
       qImg: 'm4-s-3-1.png',
       aImg: 'm4-s-3-2.png',
       examples: [
@@ -34,6 +37,7 @@ export default {
       type: 'checkbox',
     },
     q4: {
+      part: { num: 2_1, q: '선생님께서는 텔미트렌 20mg을 처방해보신 경험이 있으신지요?' },
       qImg: 'm4-s-4-1.png',
       aImg: 'm4-s-4-2.png',
       examples: [
@@ -43,6 +47,7 @@ export default {
       type: 'radio',
     },
     q5: {
+      part: { num: 2_1, q: '텔미트렌 20mg을 어떤 환자에게 처방하셨나요?' },
       qImg: 'm4-s-5-1.png',
       aImg: 'm4-s-5-2.png',
       examples: [
@@ -56,6 +61,7 @@ export default {
       type: 'checkbox',
     },
     q6: {
+      part: { num: 2_2, q: '텔미트렌 20mg은 어떤 ARB 제제를 대신하여 처방하셨나요?' },
       qImg: 'm4-s-6-1.png',
       aImg: 'm4-s-6-2.png',
       examples: [
@@ -71,6 +77,7 @@ export default {
       type: 'checkbox',
     },
     q7: {
+      part: { num: 2_3, q: '텔미트렌 20mg의 혈압 강하 효과에 대해 어떻게 생각하시나요? ' },
       qImg: 'm4-s-7-1.png',
       aImg: 'm4-s-7-2.png',
       examples: [
@@ -84,6 +91,7 @@ export default {
       type: 'radio',
     },
     q8: {
+      part: { num: 2_4, q: '기존 텔미사르탄 제제와 비교해서 종근당 텔미트렌의 장점은 무엇이라고 생각하시나요?' },
       qImg: 'm4-s-8-1.png',
       aImg: 'm4-s-8-2.png',
       examples: [
@@ -97,6 +105,7 @@ export default {
       type: 'radio',
     },
     q9: {
+      part: { num: 2_5, q: '텔미트렌 20mg을 처방하시지 않은 이유는 무엇인가요?' },
       qImg: 'm4-s-9-1.png',
       aImg: 'm4-s-9-2.png',
       examples: [
@@ -109,6 +118,7 @@ export default {
       type: 'checkbox',
     },
     q10: {
+      part: { num: 2_5, q: '향후 텔미트렌 20mg을 처방하실 의향이 있으신가요?' },
       qImg: 'm4-s-10-1.png',
       aImg: 'm4-s-10-2.png',
       examples: [
@@ -120,7 +130,7 @@ export default {
       type: 'radio',
     },
   },
-  5: false,
-  6: false,
-  7: false,
+  202105: false,
+  202106: false,
+  202107: false,
 }

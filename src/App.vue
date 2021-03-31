@@ -18,4 +18,5 @@ export default {
 @import "~@/less/common";
 @import "~@/less/base";
 img { backface-visibility: hidden; }
+#app { width:2000px; position: relative; }
 </style>

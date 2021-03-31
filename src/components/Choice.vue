@@ -26,8 +26,8 @@ export default {
     }
   },
   methods: {
-    notYet(v) {
-      alert(`${v}월에 오픈 예정입니다.`);
+    notYet() {
+      alert(`오픈 예정입니다.`);
     },
     checkComplete(month) {
       return this.$store.state.completeSurvey[month];

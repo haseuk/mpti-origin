@@ -23,8 +23,8 @@
 
           <div class="panel gift-popup" v-if="giftPopup">
             <a class="close" @click="giftResolve()"></a>
-            <img src="/img/gift.png" alt="">
-            {{ gift }}
+<!--            <img src="/img/gift.png" alt="">-->
+            <p><i>축하합니다!</i><br> {{ gift }}포인트에<br> 당첨 되셨습니다.</p>
           </div>
 
           <div class="panel boom-popup" v-if="boomPopup">
@@ -87,7 +87,7 @@ export default {
         return;
       }
       try {
-        const {data} = await axios.post('/api/scratch', this.$store.state.survey);
+        const {data} = await axios.post('/api/scratch', {...this.$store.state.survey, phone: '010' + this.phoneNum});
         this.gift = data;
       } catch (e) {
         alert('이미 추첨이 완료된 설문입니다.');
@@ -117,10 +117,11 @@ export default {
       return new Promise(resolve => {
         this.giftResolve = resolve
         this.giftPopup = true;
+
       });
     },
     shareMove() {
-      this.$router.push(`/share/${this.month}`);
+      this.$router.push(`/result/${this.month}`);
     },
   },
   async mounted() {
@@ -140,7 +141,7 @@ export default {
     .wheel { .abs; .lt(1023,189); transition: 4s; transition-delay: 0.8s; transition-timing-function: ease; }
     .arrow { .abs; .lt(1280,366); }
 
-    .popup { font-size: 40px; .f;
+    .popup { font-size: 40px; .f; .fix; .lt;
       .dim { .fix; .lt; width:100%; height:120%; background: rgba(0,0,0,0.6); z-index: 50; }
       .holder { .abs; .lt(50%,50%); transform: translate(-50%,-50%); z-index: 51;
         .panel {
@@ -155,7 +156,12 @@ export default {
           }
           .roulette { color:#fff; .wh(390,100); .ib; .bgc(#1c25c5); .mt(65); .br(16); }
         }
-        .gift-popup img { .wh(1663,898); }
+        .gift-popup {
+          img { .wh(1663,898); }
+          p { .fs(60); .w(1000); .lh(80); .bold; .bgc(#fff); .br(28); .p(150,0); .tc;
+            i { .fs(80); .mb(30); .ib; color:#1c25c5; }
+          }
+        }
       }
     }
   }

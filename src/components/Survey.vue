@@ -66,7 +66,7 @@ export default {
       const step = this.getNext();
       if (step === 'survey-finish') {
         if (this.$store.state.completeSurvey[this.month]) {
-          await this.$router.push(`/share/${this.month}`);
+          await this.$router.push(`/result/${this.month}`);
           return;
         }
         const { data } = await axios.post('/api/apply', {

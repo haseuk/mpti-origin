@@ -126,7 +126,7 @@ export default {
         return;
       }
 
-      this.selectDoctor(matched[0]);
+      await this.selectDoctor(matched[0]);
     },
     submitInput() {
       if(!this.input.hospital || !this.input.department || !this.input.name) {
@@ -139,8 +139,10 @@ export default {
     async selectDoctor(doctor) {
       this.matchedDoctors = null;
       this.$store.commit('doctor', doctor);
-      const { data } = await axios.get(`/api/checkSurvey/${doctor.sq}?_=${+new Date()}`);
-      if (data) this.$store.commit('completeSurvey', data);
+      if (doctor.sq) {
+        const {data} = await axios.get(`/api/checkSurvey/${doctor.sq}?_=${+new Date()}`);
+        if (data) this.$store.commit('completeSurvey', data);
+      }
       this.page = 'welcome';
     },
   },
@@ -180,7 +182,7 @@ export default {
 
 
 
-  .popup { font-size: 40px; .f;
+  .popup { font-size: 40px; .f; .fix; .lt;
     .dim { .fix; .lt; width:100%; height:120%; background: rgba(0,0,0,0.6); z-index: 50; }
     .holder { .abs; .lt(50%,50%); transform: translate(-50%,-50%); z-index: 51;
       .panel { .fs(60); .bgc(#fff); .br(28); .lh(100); .tc; .regular; .ls(-1);

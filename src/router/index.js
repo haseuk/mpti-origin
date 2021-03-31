@@ -16,7 +16,7 @@ const router = new Router({
     { path: '/choice', name: 'choice', component: Choice },
     { path: '/survey/:month', name: 'survey', component: Survey },
     { path: '/event/:month', name: 'event', component: Event },
-    { path: '/result/4', name: 'result', component: Result4 },
+    { path: '/result/202104', name: 'result', component: Result4 },
   ]
 });
 

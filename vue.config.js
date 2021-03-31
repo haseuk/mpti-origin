@@ -2,7 +2,7 @@ module.exports = {
   devServer: {
     proxy: {
       '^/api': {
-        target: 'http://10.0.1.100:8080/',
+        target: 'http://www.ckdmpti.com/',
         ws: true,
         changeOrigin: true,
       },
