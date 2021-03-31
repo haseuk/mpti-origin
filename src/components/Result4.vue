@@ -48,7 +48,7 @@
               <li v-for="(example, i) in que.q8.examples" :key="example.idx">
                 <div>
                   <span :style="{width: perSum('q8', i) + '%'}">
-                    <s>{{ perSum('q8', i).toFixed(1) }}%</s>
+                    <s :class="{inside: perSum('q8', i) > 70}">{{ perSum('q8', i).toFixed(1) }}%</s>
                   </span>
                 </div>
               </li>
@@ -197,7 +197,9 @@ export default {
         li, li + li + li { .lt;
           div { .tr;
             span { .ib; .h(40); .bgc(#e73262); .tl; border-top-left-radius: 30px; border-bottom-left-radius: 30px; .rel; .min-w(30);
-              s { .fs(36);  color:#e73262; .bold; .abs; .lt(0,2); transform: translateX(-110%); .ml(0);}
+              s { .fs(32);  color:#e73262; .bold; .abs; .lt(0,3); transform: translateX(-110%); .ml(0);
+                &.inside { color: #fff; transform: translateX(0); .ml(20); }
+              }
             }
           }
         }
@@ -205,7 +207,9 @@ export default {
         li + li, li + li + li + li { .l(504);
           div { .tl;
             span { .bgc(#002f7b); .tr; border-radius: 0; border-top-right-radius: 30px; border-bottom-right-radius: 30px;
-              s { color:#002f7b; left:auto; transform: translateX(0); .ml(10); }
+              s { color:#002f7b; left:auto; transform: translateX(0); .ml(10);
+                &.inside { color: #fff; transform: translateX(0); .mr(20); }
+              }
             }
           }
         }
