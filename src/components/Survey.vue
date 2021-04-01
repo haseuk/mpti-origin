@@ -3,6 +3,10 @@
     <transition name="fade">
       <div v-if="queBox" class="queBox" :key="1">
         <img :src="`/img/${que.qImg}`" alt="survey">
+        <img :src="`/img/${que.img}`" class="doctors">
+        <div class="curtain-wrap" v-if="que.curtain">
+          <div class="curtain-inner" :class="{ 'curtain-mover' : isActive}"></div>
+        </div>
         <a @click="ansView" class="ans-view">다음</a>
       </div>
 
@@ -14,6 +18,7 @@
               <s class="num" :class="e.idx"></s>
               <input :type="`${que.type}`" :value="i + 1" name="survey" v-model="answer[step]">
               <p v-html="e.label || e"></p>
+              <div class="list-curtain-wrap"><span class="list-curtain-inner" :class="[{'curtain-mover' : isActive}, e.idx]"></span></div>
             </label>
           </div>
           <a @click="nextQue">다음</a>
@@ -35,6 +40,7 @@ export default {
       step: 'q1',
       answer: {},
       queBox: true,
+      isActive: false,
     }
   },
   watch: {
@@ -55,8 +61,16 @@ export default {
     }
   },
   methods: {
+    curtainActive() {
+      this.isActive =! this.isActive
+    },
     ansView() {
       this.queBox = !this.queBox;
+      this.isActive = false;
+      var self = this;
+      setTimeout(function() {
+        self.isActive = true;
+      },500)
     },
     async nextQue() {
       if (!this.answer[this.step] || this.answer[this.step].length === 0) {
@@ -89,6 +103,12 @@ export default {
       if (n) return n;
       return this.que.next;
     },
+  },
+  mounted() {
+    var self = this;
+    setTimeout(function() {
+      self.curtainActive();
+    },500)
   }
 }
 </script>
@@ -98,7 +118,15 @@ export default {
 
   [survey] {
     > div { .abs; .lt; }
-    div a { .wh(486,134); .ib; .abs; .lt(755,1000); }
+    div a { .wh(486,134); .ib; .abs; .lt(755,1000); z-index: 5; }
+    .queBox {
+      .doctors { .abs; .lt(1480,806); z-index: 1; }
+      .curtain-wrap { .wh(1194,446); .abs; .lt(675,394); overflow: hidden;
+        .curtain-inner { .f; .abs; .lt; .bgc(#fff); transition: 3s;
+          &.curtain-mover { .t(100%); }
+        }
+      }
+    }
     .input-box { .abs; .lt; .f; .pl(120); .-box;
       .inner { .h(608); display: inline-flex; flex-direction: column; flex-wrap: wrap;
         label { .ib; .rel;
@@ -118,6 +146,19 @@ export default {
           input:checked + p { color:#fff; }
           p { .fs(70); color:#004a99; .lh(90); .abs; .lt(120,50%); transform: translateY(-50%); font-family: "notokr", arial, sans-serif; .regular; .ls(-1);
             sup { .fs(25); }
+          }
+          .list-curtain-wrap { .abs; .lt; .f; border:4px solid transparent; .-box; overflow: hidden; .br(28);
+            .list-curtain-inner { .f; .abs; .bgc(#fff); .lt; transition: 1.5s; transition-timing-function: linear;
+              &.curtain-mover { .l(100%);
+                &.a { transition-delay: 0s; }
+                &.b { transition-delay: 0.3s; }
+                &.c { transition-delay: 0.6s; }
+                &.d { transition-delay: 0.9s; }
+                &.e { transition-delay: 1.2s; }
+                &.f { transition-delay: 1.5s; }
+                &.g { transition-delay: 1.8s; }
+              }
+            }
           }
         }
       }

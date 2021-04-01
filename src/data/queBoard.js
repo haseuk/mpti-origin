@@ -4,6 +4,8 @@ export default {
       part: { num: 1_1, q: '난생 첫 고혈압을 진단을 받은 아래의 환자, 이 환자에게 어떤 관리 조치를 할 예정이십니까?' },
       qImg: 'm4-s-1-1.png',
       aImg: 'm4-s-1-2.png',
+      img: 'doctors.png',
+      curtain: 'curtain-mover',
       examples: [
         {idx: 'a', next: 'q2', label: '혈압과의 싸움에서는 선제압이 중요!<br> 즉시 혈압강하제 처방을 고려한다.'},
         {idx: 'b', next: 'q3', label: '운동과 식이요법은 모든 처방에 우선!<br> 약처방 보다는 LSM을 먼저 권한다.'}
