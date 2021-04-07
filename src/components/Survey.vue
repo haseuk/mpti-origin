@@ -4,9 +4,7 @@
       <div v-if="queBox" class="queBox" :key="1">
         <img :src="`/img/${que.qImg}`" alt="survey">
         <img :src="`/img/${que.img}`" class="doctors">
-        <div class="curtain-wrap" v-if="que.curtain">
-          <div class="curtain-inner" :class="{ 'curtain-mover' : isActive}"></div>
-        </div>
+        <TypeText :value="que.qText" :delay="1000" class="q-text" />
         <a @click="ansView" class="ans-view">다음</a>
       </div>
 
@@ -17,8 +15,7 @@
             <label v-for="(e, i) in que.examples" :key="i">
               <s class="num" :class="e.idx"></s>
               <input :type="`${que.type}`" :value="i + 1" name="survey" v-model="answer[step]">
-              <p v-html="e.label || e"></p>
-              <div class="list-curtain-wrap"><span class="list-curtain-inner" :class="[{'curtain-mover' : isActive}, e.idx]"></span></div>
+              <TypeText :value="e.label || e" :delay="i * 700 + 500" :speed="20"/>
             </label>
           </div>
           <a @click="nextQue">다음</a>
@@ -31,15 +28,16 @@
 <script>
 import QueData from "@/data/queBoard";
 import axios from 'axios';
+import TypeText from "@/components/TypeText";
 
 export default {
   name: "Survey",
-
+  components: {TypeText},
   data() {
     return {
       step: 'q1',
       answer: {},
-      queBox: true,
+      queBox: false,
       isActive: false,
     }
   },
@@ -118,19 +116,20 @@ export default {
 
   [survey] {
     > div { .abs; .lt; }
-    div a { .wh(486,134); .ib; .abs; .lt(755,1000); z-index: 5; }
+    div a { .wh(437,120); .ib; .abs; .lt(781,911); z-index: 5; }
     .queBox {
       .doctors { .abs; .lt(1480,806); z-index: 1; }
-      .curtain-wrap { .wh(1194,446); .abs; .lt(675,394); overflow: hidden;
+      .q-text { .fs(47); color:#004a99; .lh(71); font-family: "notokr", arial, sans-serif; .medium; .ls(-4); .abs; .lt(690,278); }
+      .curtain-wrap { .wh(1194,446); .abs; .lt(675,273); overflow: hidden;
         .curtain-inner { .f; .abs; .lt; .bgc(#fff); transition: 3s;
           &.curtain-mover { .t(100%); }
         }
       }
     }
-    .input-box { .abs; .lt; .f; .pl(120); .-box;
-      .inner { .h(608); display: inline-flex; flex-direction: column; flex-wrap: wrap;
-        label { .ib; .rel;
-          .num { .wh(106,106); .ib; .contain; .no-repeat; .abs; .lt(-50,50%); transform: translateY(-50%); z-index: 1;
+    .input-box { .abs; .lt; .f; .pl(100); .-box;
+      .inner { display: inline-flex; flex-direction: column; flex-wrap: wrap;
+        label { .ib; .rel; .block;
+          .num { .wh(95,95); .ib; .contain; .no-repeat; .abs; .lt(-50,50%); transform: translateY(-50%); z-index: 1;
             &.a { .bg('/img/ico-n1.png'); }
             &.b { .bg('/img/ico-n2.png'); }
             &.c { .bg('/img/ico-n3.png'); }
@@ -138,14 +137,15 @@ export default {
             &.e { .bg('/img/ico-n5.png'); }
             &.f { .bg('/img/ico-n6.png'); }
             &.g { .bg('/img/ico-n7.png'); }
+            &.h { .bg('/img/ico-n8.png'); }
           }
-          input { .w(1500); .br(24); .-a(#004a99,4px); .bgc(#fff); .rel; .-box; appearance: none; outline: none; }
+          input { .w(1350); .br(24); .-a(#004a99,4px); .bgc(#fff); .rel; .-box; appearance: none; outline: none; }
           input:checked { .bgc(#00155c);
             &:after { .cnt; .ib; .wh(99,96); .contain('/img/ico-checked.png'); .abs; .rt(27,50%); transform: translateY(-50%); }
           }
           input:checked + p { color:#fff; }
-          p { .fs(70); color:#004a99; .lh(90); .abs; .lt(120,50%); transform: translateY(-50%); font-family: "notokr", arial, sans-serif; .regular; .ls(-1);
-            sup { .fs(25); }
+          p { .fs(64); color:#004a99; .lh(80); .abs; .lt(110,23); font-family: "notokr", arial, sans-serif; .regular; .ls(-1);
+            sup { .fs(25); line-height: 0; vertical-align: 35px; }
           }
           .list-curtain-wrap { .abs; .lt; .f; border:4px solid transparent; .-box; overflow: hidden; .br(28);
             .list-curtain-inner { .f; .abs; .bgc(#fff); .lt; transition: 1.5s; transition-timing-function: linear;
@@ -157,47 +157,61 @@ export default {
                 &.e { transition-delay: 1.2s; }
                 &.f { transition-delay: 1.5s; }
                 &.g { transition-delay: 1.8s; }
+                &.h { transition-delay: 2.1s; }
               }
             }
           }
         }
       }
-      &.q1 label input { .w(1760); }
-      &.q1, &.q4 { .pt(373);
-        label { .mb(43);
-          input { .h(230); .lh(230); }
+      &.q1 label input { .w(1585); }
+      &.q1{ .pt(369);
+        label { .mb(40); .ml(106);
+          input { .h(208); .lh(208); }
+          p { .t(30); }
         }
       }
-      &.q2, &.q3, &.q5, &.q6, &.q7, &.q8, &.q9, &.q10 { .pt(357);
-        label { .mb(22);
-          input { .h(130); .lh(130); }
-          p { .fs(60); .l(80); }
+      &.q2, &.q3, &.q4, &.q5, &.q6, &.q7, &.q8, &.q9, &.q10 { .pt(346);
+        label { .mb(20); .ml(45);
+          input { .h(117); .lh(117); }
+          p { .fs(54); .l(70); }
         }
       }
-      &.q4 { .pt(427);
-        label input { .w(1250); }
+      &.q4 { .pt(368);
+        label { .mb(40);
+          input { .wh(1188,207); .lh(207); }
+          p { .fs(64); .l(110); .t(65); }
+        }
       }
       &.q5, &.q7, &.q8 {
-        .inner { .h(760);
-          label input { .w(1250); }
+        .inner {
+          label {
+            input { .w(1125); }
+            p { .l(80); }
+          }
         }
-        a { .lt(1424,966); }
+        a { .lt(781,1041); }
       }
       &.q6 {
-        label { .mr(179);
-          &:nth-child(n+5) { .mr(0); }
-          input { .w(790); }
+        .inner { .h(565);
+          label { .mr(162); .ml(131); .ib;
+            &:nth-child(n+5) { .mr(0); .ml(0); }
+            input { .w(711); }
+          }
         }
-        a { .t(1010); }
       }
-      &.q8 .inner label {
-        input { .w(1290); }
-        p { .fs(45); }
+      &.q8, &.q9, &.q10 {
+        .inner label {
+          input { .w(1161); }
+          p { .fs(45); .ls(-4); }
+          &:nth-of-type(3) p { .ls(-5); }
+        }
       }
-      &.q8 a, &.q9 a, &.q10 a { .lt(1445,966); }
-      &.q9 .inner label {
-        input { .w(1280); }
-        p { .fs(52); .ls(-2); }
+      &.q9 {
+        .inner label input { .w(1152); }
+        p { .ls(-2); }
+      }
+      &.q10 {
+        .inner label p { .fs(64); }
       }
     }
   }

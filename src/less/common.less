@@ -7,3 +7,11 @@ input, select, textarea { font-family: inherit; }
   opacity: 0;
 }
 
+.box-enter-active, .box-leave-active {
+  transition: opacity .3s, top .3s;
+}
+.box-enter, .box-leave-to {
+  opacity: 0;
+  top: 50px;
+}
+

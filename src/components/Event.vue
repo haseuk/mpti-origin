@@ -5,6 +5,8 @@
         <img src="/img/event.png" alt="">
         <img src="/img/wheel.png" class="wheel" :style="spinValue">
         <img src="/img/arrow.png" class="arrow">
+        <a class="event-btn btn" @click="eventPopup = true">참여하기</a>
+        <RouterLink :to="`/result/${month}`" class="result-btn btn">결과보기</RouterLink>
       </div>
     </transition>
 
@@ -23,8 +25,7 @@
 
           <div class="panel gift-popup" v-if="giftPopup">
             <a class="close" @click="giftResolve()"></a>
-<!--            <img src="/img/gift.png" alt="">-->
-            <p><i>축하합니다!</i><br> {{ gift }}포인트에<br> 당첨 되셨습니다.</p>
+            <img src="/img/celebration.png" alt="">
           </div>
 
           <div class="panel boom-popup" v-if="boomPopup">
@@ -39,8 +40,6 @@
 </template>
 
 <script>
-// import axios from 'axios';
-
 import axios from "axios";
 
 export default {
@@ -98,8 +97,6 @@ export default {
       this.spinTotal = this.spinStartAngle + this.options.find(e => e.value === '' + this.gift).id * 45;
       await this.sleep(6000);
       await this.showResult();
-      this.shareMove();
-
     },
     async showResult() {
       if (this.gift === '꽝')
@@ -120,9 +117,6 @@ export default {
 
       });
     },
-    shareMove() {
-      this.$router.push(`/result/${this.month}`);
-    },
   },
   async mounted() {
     if (!this.$store.state.survey) {
@@ -140,6 +134,10 @@ export default {
   [event] {
     .wheel { .abs; .lt(1023,189); transition: 4s; transition-delay: 0.8s; transition-timing-function: ease; }
     .arrow { .abs; .lt(1280,366); }
+    .btn { .abs;
+      &.event-btn { .wh(716,115); .lt(126,575); }
+      &.result-btn { .wh(360,108); .lt(308,1005); }
+    }
 
     .popup { font-size: 40px; .f; .fix; .lt;
       .dim { .fix; .lt; width:100%; height:120%; background: rgba(0,0,0,0.6); z-index: 50; }

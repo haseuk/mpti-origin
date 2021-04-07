@@ -4,10 +4,10 @@
       <img src="/img/choice.png" alt="">
       <div class="list-box">
         <ul>
-          <li v-for="(q, month) in surveys" :key="month" :class="{reverse: reverseImg === month}">
+          <li v-for="(q, month) in surveys" :key="month" :class="{reverse: reverseImg === month, complete: checkComplete(month)}" :data-month="month">
             <div class="front img"></div>
             <div class="back img"></div>
-            <a v-if="q" :class="{complete: checkComplete(month)}" @click="choice(month)"></a>
+            <a v-if="q" @click="choice(month)"></a>
             <a v-else @click="notYet(month)"></a>
           </li>
         </ul>
@@ -38,9 +38,8 @@ export default {
     choice(v) {
       this.reverseImg = v;
       setTimeout(() => {this.$router.push(`/survey/${v}`)}, 2000);
-    }
+    },
   }
-
 }
 </script>
 
@@ -52,10 +51,15 @@ export default {
       ul { .flex; flex-direction: row; justify-content: space-evenly;
         li { .wh(430,468); .tc; transition: 1s; .rel; -webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d; -ms-transform-style: preserve-3d; -o-transform-style: preserve-3d;
           .img { .ib; .f; .abs; .lt; backface-visibility: hidden; }
-          .front { .contain('/img/choice-4.png'); transform: rotateY(180deg); }
+          .front { transform: rotateY(180deg); }
           .back { .contain('/img/coming.png'); }
           &.reverse {  transform: rotateY(180deg); }
-          a { .rel; .f; .block; }
+          &.complete:after { .cnt; .f; .ib; .abs; .lt; .contain('/img/completed.png'); backface-visibility: hidden; }
+          a { .rel; .f; .block; z-index: 1; }
+          &[data-month="202104"] {
+            .front { .contain('/img/front-img4.png'); }
+            .back { .contain('/img/back-img4.png'); }
+          }
         }
       }
     }
