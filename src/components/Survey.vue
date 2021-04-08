@@ -1,14 +1,14 @@
 <template>
   <div survey>
     <transition name="fade">
-      <div v-if="queBox" class="queBox" :key="1">
+      <div v-if="queBox" class="queBox" :key="step">
         <img :src="`/img/${que.qImg}`" alt="survey">
         <img :src="`/img/${que.img}`" class="doctors">
-        <TypeText :value="que.qText" :delay="1000" class="q-text" />
-        <a @click="ansView" class="ans-view">다음</a>
+        <TypeText :value="que.qText" :delay="1000" class="q-text" v-if="step === 'q0'"/>
+        <a @click="step = 'q1'" class="ans-view">다음</a>
       </div>
 
-      <div v-else :key="2">
+      <div v-else :key="step + 'a'">
         <img :src="`/img/${que.aImg}`" alt="survey">
         <div class="input-box" :class="step">
           <div class="inner">
@@ -35,7 +35,7 @@ export default {
   components: {TypeText},
   data() {
     return {
-      step: 'q1',
+      step: 'q0',
       answer: {},
       queBox: true,
     }

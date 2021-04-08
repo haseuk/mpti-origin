@@ -24,11 +24,9 @@
         </label>
       </div>
       <div v-else-if="page === 'welcome'" :key="4" class="welcome">
-        <div class="welcome">
-          <img src="/img/survey-start.png" alt="설문을 시작하겠습니다.">
-          <p>{{ doctor.hospital }}<br> {{ doctor.name }}선생님 안녕하세요!</p>
-          <RouterLink to="/choice">시작하기</RouterLink>
-        </div>
+        <img src="/img/survey-start.png" alt="설문을 시작하겠습니다.">
+        <p>{{ doctor.hospital }}<br> {{ doctor.name }}선생님 안녕하세요!</p>
+        <RouterLink to="/choice">시작하기</RouterLink>
       </div>
     </transition>
 
@@ -152,7 +150,7 @@ export default {
 <style lang="less">
 @import "~@/less/asset";
 [intro] {
-  > div { .abs; .lt; }
+  > div { .abs; .lt; .wh(2000,1200); }
   img { .wf; .block; }
   input { .abs; .p(0,30); .-box; .-a; .bgc; outline: none; }
   ::placeholder { text-align: center; color:#c7c7c7; .medium; }
@@ -175,8 +173,8 @@ export default {
     }
     .submit { .wh(400,120); .ib; .abs; .lt(798,964); }
   }
-  .welcome {
-    p { .fs(110); .lh(140); color:#1c25c5; .wf; .block; .bold; .abs; .tc; .lt(50%,317); transform: translateX(-50%); }
+  .welcome { .fs(40);
+    p { .fs(110); .lh(140); color:#1c25c5; .wf; .bold; .abs; .tc; .t(317); }
     a { .fs(0); .abs; .wh(686,149); .lt(50%,814); transform: translateX(-50%); }
   }
 
@@ -201,6 +199,5 @@ export default {
       }
     }
   }
-  .welcome { font-size: 40px; }
 }
 </style>
