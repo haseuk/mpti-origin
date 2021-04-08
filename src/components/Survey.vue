@@ -38,13 +38,16 @@ export default {
       step: 'q1',
       answer: {},
       queBox: true,
-      isActive: false,
     }
   },
   watch: {
-    step() {
+    async step() {
       if (!this.answer[this.step]) this.answer[this.step] = [];
-      this.ansView();
+      this.queBox = true;
+      if (!this.que.qText) {
+        await this.sleep(2500);
+        this.ansView();
+      }
     }
   },
   computed: {
@@ -59,16 +62,8 @@ export default {
     }
   },
   methods: {
-    curtainActive() {
-      this.isActive =! this.isActive
-    },
     ansView() {
-      this.queBox = !this.queBox;
-      this.isActive = false;
-      var self = this;
-      setTimeout(function() {
-        self.isActive = true;
-      },500)
+      this.queBox = false;
     },
     async nextQue() {
       if (!this.answer[this.step] || this.answer[this.step].length === 0) {

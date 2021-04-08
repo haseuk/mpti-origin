@@ -3,8 +3,7 @@
 </template>
 
 <script>
-
-const wait = t => new Promise(resolve => setTimeout(resolve, t));
+// const wait = t => new Promise(resolve => setTimeout(resolve, t));
 
 export default {
   name: 'TypeText',
@@ -19,7 +18,7 @@ export default {
     };
   },
   async mounted() {
-    if (this.delay) await wait(this.delay);
+    if (this.delay) await this.sleep(this.delay);
     let cursor = 0;
     const id = setInterval(() => {
       if (!this.value) {

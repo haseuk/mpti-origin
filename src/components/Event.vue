@@ -77,9 +77,6 @@ export default {
     },
   },
   methods: {
-    sleep(time) {
-      return new Promise(resolve => setTimeout(resolve, time));
-    },
     async start() {
       if(!this.phoneNum) {
         alert('연락처를 입력해주세요.');
