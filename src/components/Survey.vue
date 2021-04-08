@@ -37,7 +37,7 @@ export default {
     return {
       step: 'q1',
       answer: {},
-      queBox: false,
+      queBox: true,
       isActive: false,
     }
   },
@@ -103,10 +103,7 @@ export default {
     },
   },
   mounted() {
-    var self = this;
-    setTimeout(function() {
-      self.curtainActive();
-    },500)
+    if (!this.doctor) this.$router.replace('/');
   }
 }
 </script>
