@@ -49,7 +49,7 @@ export default {
   [choice] {  .abs; .lt;
     .list-box { .wf; .abs; .lt(0,328); .p(0,32,0,25); .-box;
       ul { .flex; flex-direction: row; justify-content: space-evenly;
-        li { .wh(430,468); .tc; transition: 1s; .rel; -webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d; -ms-transform-style: preserve-3d; -o-transform-style: preserve-3d;
+        li { .wh(430,468); .tc; transition: 0.7s; .rel; -webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d; -ms-transform-style: preserve-3d; -o-transform-style: preserve-3d;
           .img { .ib; .f; .abs; .lt; backface-visibility: hidden; }
           .front { transform: rotateY(180deg); }
           .back { .contain('/img/coming.png'); }

@@ -8,7 +8,8 @@ export default new Vuex.Store({
     doctor: null,
     survey: null,
     ep: null,
-    completeSurvey: {}
+    completeSurvey: {},
+    completeEvent: false,
   },
   mutations: {
     doctor(state, val) {
@@ -22,6 +23,9 @@ export default new Vuex.Store({
     },
     completeSurvey(state, arr) {
       if (arr) arr.forEach(ep => state.completeSurvey[ep] = true);
+    },
+    completeEvent(state) {
+      state.completeEvent = true;
     }
   },
 });

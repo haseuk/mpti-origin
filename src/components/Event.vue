@@ -5,8 +5,9 @@
         <img src="/img/event.png" alt="">
         <img src="/img/wheel.png" class="wheel" :style="spinValue">
         <img src="/img/arrow.png" class="arrow">
-        <a class="event-btn btn" @click="eventPopup = true">참여하기</a>
+        <a class="event-btn btn" @click="check">참여하기</a>
         <RouterLink :to="`/result/${month}`" class="result-btn btn">결과보기</RouterLink>
+        <RouterLink to="/" class="home">홈으로 가기</RouterLink>
       </div>
     </transition>
 
@@ -77,6 +78,13 @@ export default {
     },
   },
   methods: {
+    check() {
+      if (this.$store.state.completeEvent) {
+        alert('이미 참여하셨습니다');
+        return;
+      }
+      this.eventPopup = true;
+    },
     async start() {
       if(!this.phoneNum) {
         alert('연락처를 입력해주세요.');
@@ -90,6 +98,7 @@ export default {
         location.href = '/';
         return;
       }
+      this.$store.commit('completeEvent');
       this.eventPopup = false;
       this.spinTotal = this.spinStartAngle + this.options.find(e => e.value === '' + this.gift).id * 45;
       await this.sleep(6000);
@@ -135,7 +144,7 @@ export default {
       &.event-btn { .wh(716,115); .lt(126,575); }
       &.result-btn { .wh(360,108); .lt(308,1005); }
     }
-
+    .home { .wh(316,132); .ib; .abs; .lt; z-index: 1; }
     .popup { font-size: 40px; .f; .fix; .lt;
       .dim { .fix; .lt; width:100%; height:120%; background: rgba(0,0,0,0.6); z-index: 50; }
       .holder { .abs; .lt(50%,50%); transform: translate(-50%,-50%); z-index: 51;

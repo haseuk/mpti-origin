@@ -53,7 +53,7 @@
         <div class="holder">
           <div class="panel none-code-popup">
             <a class="close" @click="noneCodePopup = false"></a>
-            <p>입력하신 코드 및 의사가 없습니다.<br>
+            <p>고유코드와 의사명이 일치하지 않습니다.<br>
               다시 한번 확인 후 입력해주세요.</p>
           </div>
         </div>
@@ -160,10 +160,10 @@ export default {
   }
   .code {
     .submit { .wh(400,270); .ib; .abs; .lt(1275,598); }
-    input { .fs(56); .wh(800,120); .lt(475,598);
-      &.name { .t(750); }
+    input { .fs(38); .wh(560,84); .lt(628,599);
+      &.name { .t(704); }
     }
-    .next { .wh(200,82); .ib; .abs; .lt(986,1030); }
+    .next { .wh(200,82); .ib; .abs; .lt(987,980); }
   }
   .input {
     input { .fs(42); .wh(657,105); .l(753);
@@ -193,7 +193,7 @@ export default {
             span { .fs(60); .bold; .ib; color:#fff; .vam; .lh(100); .w(250); .bgc(#1c25c5); .br(16); .fr; .mr(10); }
           }
         }
-        &.none-code-popup, &.input-popup { .wh(963,607);
+        &.none-code-popup, &.input-popup { .wh(1093,607);
           p { .wf; .abs; .lt(50%,50%); transform: translate(-50%,-50%); }
         }
       }

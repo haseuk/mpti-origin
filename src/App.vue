@@ -4,7 +4,7 @@
       <router-view/>
     </transition>
     <audio loop>
-      <source  src="/mp3/mini.mp3" type="audio/mp3">
+      <source src="/mp3/mini.mp3" type="audio/mp3">
     </audio>
   </div>
 </template>

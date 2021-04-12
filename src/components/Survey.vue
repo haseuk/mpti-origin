@@ -121,7 +121,7 @@ export default {
     .input-box { .abs; .lt; .f; .pl(100); .-box;
       .inner { display: inline-flex; flex-direction: column; flex-wrap: wrap;
         label { .ib; .rel; .block;
-          .num { .wh(95,95); .ib; .contain; .no-repeat; .abs; .lt(-50,50%); transform: translateY(-50%); z-index: 1;
+          .num { .wh(86,86); .ib; .contain; .no-repeat; .abs; .lt(16,50%); transform: translateY(-50%); z-index: 1;  backface-visibility: hidden;
             &.a { .bg('/img/ico-n1.png'); }
             &.b { .bg('/img/ico-n2.png'); }
             &.c { .bg('/img/ico-n3.png'); }
@@ -131,13 +131,13 @@ export default {
             &.g { .bg('/img/ico-n7.png'); }
             &.h { .bg('/img/ico-n8.png'); }
           }
-          input { .w(1350); .br(24); .-a(#004a99,4px); .bgc(#fff); .rel; .-box; appearance: none; outline: none; }
+          input { .wh(1350,117); .lh(117); .br(104); .-a(#004a99,4px); .bgc(#fff); .rel; .-box; appearance: none; outline: none; }
           input:checked { .bgc(#00155c);
-            &:after { .cnt; .ib; .wh(99,96); .contain('/img/ico-checked.png'); .abs; .rt(27,50%); transform: translateY(-50%); }
+            &:after { .cnt; .ib; .wh(89,86); .contain('/img/ico-checked.png'); .abs; .rt(28,50%); transform: translateY(-50%); }
           }
           input:checked + p { color:#fff; }
-          p { .fs(64); color:#004a99; .lh(80); .abs; .lt(110,23); font-family: "notokr", arial, sans-serif; .regular; .ls(-1);
-            sup { .fs(25); line-height: 0; vertical-align: 35px; }
+          p { .fs(64); color:#004a99; .lh(80); .abs; .lt(155,23); font-family: "notokr", arial, sans-serif; .regular; .ls(-1);
+            sup { .fs(25); line-height: 0; vertical-align: 18px; }
           }
           .list-curtain-wrap { .abs; .lt; .f; border:4px solid transparent; .-box; overflow: hidden; .br(28);
             .list-curtain-inner { .f; .abs; .bgc(#fff); .lt; transition: 1.5s; transition-timing-function: linear;
@@ -155,52 +155,66 @@ export default {
           }
         }
       }
-      &.q1 label input { .w(1585); }
+      &.q1 label input { .w(1444); }
       &.q1{ .pt(369);
-        label { .mb(40); .ml(106);
-          input { .h(208); .lh(208); }
+        label { .mb(40);
+          .num { .wh(96,96); .l(25); }
+          input { .h(207); .lh(207);
+            &:after { .r(45); }
+          }
           p { .t(30); }
         }
       }
       &.q2, &.q3, &.q4, &.q5, &.q6, &.q7, &.q8, &.q9, &.q10 { .pt(346);
-        label { .mb(20); .ml(45);
-          input { .h(117); .lh(117); }
-          p { .fs(54); .l(70); }
+        label { .mb(20);
+          p { .fs(54); .l(120); }
         }
       }
-      &.q4 { .pt(368);
+      &.q3 {
+        label {
+          p { .ls(-3); }
+        }
+      }
+      &.q4 { .pt(346);
         label { .mb(40);
-          input { .wh(1188,207); .lh(207); }
-          p { .fs(64); .l(110); .t(65); }
+          input { .w(1200); }
+          p { .fs(54); .l(120); .t(22); }
         }
       }
       &.q5, &.q7, &.q8 {
         .inner {
           label {
-            input { .w(1125); }
-            p { .l(80); }
+            input { .w(1175); }
+            p { .l(135); .ls(-3); }
           }
         }
         a { .lt(781,1041); }
       }
       &.q6 {
         .inner { .h(565);
-          label { .mr(162); .ml(131); .ib;
+          label { .mr(112); .ml(80); .ib;
             &:nth-child(n+5) { .mr(0); .ml(0); }
-            input { .w(711); }
+            input { .w(760);
+              &:after { .wh(70,68); .r(36); }
+            }
+            p { .l(140); .ls(-4); }
           }
         }
       }
       &.q8, &.q9, &.q10 {
         .inner label {
-          input { .w(1161); }
-          p { .fs(45); .ls(-4); }
+          input { .w(1280); }
+          p { .fs(45); .ls(-4); .l(135); }
           &:nth-of-type(3) p { .ls(-5); }
         }
       }
       &.q9 {
-        .inner label input { .w(1152); }
-        p { .ls(-2); }
+        .inner {
+          label {
+            input { .w(1200); }
+            p { .ls(-2);  }
+          }
+        }
       }
       &.q10 {
         .inner label p { .fs(64); }

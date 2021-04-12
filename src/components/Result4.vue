@@ -19,7 +19,7 @@
             <ul>
               <li v-for="(example, i) in que.q5.examples" :key="example.idx">
                 <div>
-                  <span :style="{height: perMax('q5', i) + '%'}">{{ perMax('q5', i).toFixed(1) }}%</span>
+                  <span :style="{width: perMax('q5', i) + '%'}">{{ perMax('q5', i).toFixed(1) }}%</span>
                   <i>{{ perSum('q5', i).toFixed(0) }}%</i>
                 </div>
               </li>
@@ -47,19 +47,8 @@
               </li>
             </ul>
           </div>
-          <div class="result result5">
-            <ul>
-              <li v-for="(example, i) in que.q8.examples" :key="example.idx">
-                <div>
-                  <span :style="{width: perSum('q8', i) + '%'}">
-                    <s :class="{inside: perSum('q8', i) > 70}">{{ perSum('q8', i).toFixed(0) }}%</s>
-                  </span>
-                </div>
-              </li>
-            </ul>
-          </div>
         </div>
-        <RouterLink :to="`/`" class="back">이전으로</RouterLink>
+        <RouterLink :to="`/event/${month}`" class="back">이전으로</RouterLink>
       </div>
     </transition>
   </div>
@@ -85,8 +74,8 @@ export default {
       return QueData[202104];
     },
     month() {
-      return QueData[0]
-    }
+      return this.$store.state.survey.ep
+    },
   },
   methods: {
     async getCounts() {
@@ -145,11 +134,11 @@ export default {
           }
         }
       }
-      .result2 { .t(872);
-        li { .wh(64,240); .abs; .lb(92,0); .max-h(240);
+      .result2 { .lt(493,683);
+        li { .wh(240,64); .block; .max-w(240); .mb(29);
           div { .hf; .rel;
-            span { .ib; .w(64); .bgc(#1c25c5); .br-t(30); .abs; .lb; .min-h(35); }
-            i { .wf; .lb; }
+            span { .ib; .h(64); .bgc(#1c25c5); .br(32); border-top-left-radius:0; border-bottom-left-radius:0; .abs; .lb; .min-w(35); }
+            i { .lh(64); .f; .tl; .pl(5); }
           }
           &:nth-child(2) { .l(264);
             span { .bgc(#1f479b); }
@@ -196,7 +185,7 @@ export default {
           }
         }
       }
-      .result4 { .lt(1047,758);
+      .result4 { .lt(1047,881);
         li { .wh(60,130); .abs; .lb(57,0);  .max-h(240);
           span { .ib; .w(64); .bgc(#325de7); .br-t(30); .abs; .lb; .min-h(35); }
           i { .wf; .lb; }
@@ -214,35 +203,7 @@ export default {
           }
         }
       }
-      .result5 { .lt(1047,960);
-        li { .w(345); .abs; .max-w(345); }
-        li, li + li + li { .lt;
-          div { .tr;
-            span { .ib; .h(40); .bgc(#00be10); .tl; border-top-left-radius: 30px; border-bottom-left-radius: 30px; .rel; .min-w(30);
-              s { .fs(32);  color:#00be10; .bold; .abs; .lt(0,3); transform: translateX(-110%); .ml(0);
-                &.inside { color: #fff; transform: translateX(0); .ml(20); }
-              }
-            }
-          }
-        }
-
-        li + li, li + li + li + li { .l(504);
-          div { .tl;
-            span { .bgc(#002f7b); .tr; border-radius: 0; border-top-right-radius: 30px; border-bottom-right-radius: 30px;
-              s { color:#002f7b; left:auto; transform: translateX(0); .ml(10);
-                &.inside { color: #fff; transform: translateX(0); .mr(20); }
-              }
-            }
-          }
-        }
-
-        li + li + li { .t(93);
-          div span { border-top-right-radius: 0; border-bottom-right-radius: 0; }
-        }
-
-        li + li + li + li { .t(93); }
-      }
     }
-    .back { .wh(350,97); .abs; .lt(338,1040); }
+    .back { .wh(350,97); .abs; .lt(1320,1020); }
   }
 </style>
