@@ -15,7 +15,7 @@
             <label v-for="(e, i) in que.examples" :key="i">
               <s class="num" :class="e.idx"></s>
               <input :type="`${que.type}`" :value="i + 1" name="survey" v-model="answer[step]">
-              <TypeText :value="e.label || e" :delay="i * 1000 + 500" :speed="Math.max(e.label.length,20)"/>
+              <TypeText :value="e.label || e" :delay="i * 1000 + 500" :speed="400"/>
             </label>
           </div>
           <a @click="nextQue">다음</a>

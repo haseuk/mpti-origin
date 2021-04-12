@@ -13,16 +13,18 @@
 
 export default {
   name: 'App',
-  mounted() {
-    let audioPlaying = false;
-    const audioStart = () => {
-      if (audioPlaying) return;
-      document.querySelector('audio').play();
-      audioPlaying = true;
+  data() {
+    return {
+      audioPlaying: false,
     };
-    document.addEventListener('touchstart', audioStart);
-    document.addEventListener('mousedown', audioStart);
-  }
+  },
+  methods: {
+    audioStart() {
+      if (this.audioPlaying) return;
+      document.querySelector('audio').play();
+      this.audioPlaying = true;
+    }
+  },
 }
 </script>
 

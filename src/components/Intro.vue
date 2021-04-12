@@ -99,6 +99,7 @@ export default {
   methods: {
     start() {
       this.page = 'code';
+      this.$parent.audioStart();
     },
     async submit() {
       if(!this.hospitalCode || !this.name) {
