@@ -49,6 +49,7 @@
           </div>
         </div>
         <RouterLink :to="`/event/${month}`" class="back">이전으로</RouterLink>
+        <a href="/" class="home">홈으로 가기</a>
       </div>
     </transition>
   </div>
@@ -67,14 +68,12 @@ export default {
       group: null,
       sums: {},
       max: {},
+      month: '202104'
     }
   },
   computed: {
     que() {
       return QueData[202104];
-    },
-    month() {
-      return this.$store.state.survey.ep
     },
   },
   methods: {
@@ -205,5 +204,6 @@ export default {
       }
     }
     .back { .wh(350,97); .abs; .lt(1320,1020); }
+    .home { .wh(316,132); .ib; .abs; .lt; z-index: 1; }
   }
 </style>

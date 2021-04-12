@@ -7,7 +7,7 @@
         <img src="/img/arrow.png" class="arrow">
         <a class="event-btn btn" @click="check">참여하기</a>
         <RouterLink :to="`/result/${month}`" class="result-btn btn">결과보기</RouterLink>
-        <RouterLink to="/" class="home">홈으로 가기</RouterLink>
+        <a href="/" class="home">홈으로 가기</a>
       </div>
     </transition>
 
