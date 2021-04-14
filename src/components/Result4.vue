@@ -8,9 +8,8 @@
             <ul>
               <li v-for="(example, i) in que.q4.examples" :key="example.idx">
                 <div>
-                  <span :style="{width: perSum('q4', i) + '%'}">
-                    <i>{{ perSum('q4', i).toFixed(0) }}%</i>
-                  </span>
+                  <span :style="{height: perSum('q4', i) + '%'}"></span>
+                  <i>{{ perSum('q4', i).toFixed(0) }}%</i>
                 </div>
               </li>
             </ul>
@@ -117,19 +116,17 @@ export default {
       .result {
         i { .fs(26); color:#fff; .bold; .abs; .ib; .tc; }
       }
-      .result1 { .t(423);
-        li { .w(350); .abs; .lt(70,0); .max-w(350);
-          div { .tr;
-            span { .ib; .h(60); .bgc(#00be10); .tl; border-top-left-radius: 30px; border-bottom-left-radius: 30px; .min-w(30); .rel;
-              i { .fs(36); .lh(60); .lt(10,0); }
-            }
+      .result1 { .lt(416,321);
+        li { .wh(64,220); .max-h(220); .ib; .abs; .lt;
+          div { .hf;
+            span { .ib; .w(64); .bgc(#00be10); border-top-left-radius: 32px; border-top-right-radius: 30px; .min-h(30); .abs; .lb; }
+            i { .fs(36); .lb(-130,-8); color:#00be10; .w(130); .tc; }
           }
         }
-        li + li { .l(625); .max-w(350);
-          div { .tl;
-            span { .bgc(#002f7b); .tr; border-radius: 0; border-top-right-radius: 30px; border-bottom-right-radius: 30px; .min-w(30);
-              i { left:auto; .r(10); }
-            }
+        li + li { .l(86);
+          div {
+            span { .bgc(#2334b1); }
+            i { color:#2334b1; .l(70);  }
           }
         }
       }
@@ -153,8 +150,8 @@ export default {
           }
         }
       }
-      .result3 { .lt(1026,315);
-        li { .wh(170); .max-w(170); .max-h(170); .ib; .rel;
+      .result3 { .lt(1030,322);
+        li { .wh(160); .max-w(160); .max-h(160); .ib; .rel;
           div { .f; .rel;
             span { .ib; .br(50%); .min-w(60); .min-h(60); .abs; .lb(50%,0); transform: translateX(-50%); .-box; background: linear-gradient(90deg, rgba(245,245,246,1) 0%, rgba(244,245,246,1) 100%);
               s { .wh(80%,80%); .abs; .lt(50%,50%); transform: translate(-50%,-50%); .contain('/img/circle.png'); }
@@ -162,19 +159,19 @@ export default {
             }
           }
           &:nth-child(1), &:nth-child(7), &:nth-child(8) { .hide; }
-          &:nth-child(2) { .mr(9);
+          &:nth-child(2) { .mr(18);
             span { .-a(#1c25c3,10px); }
             i { color:#1c25c3; }
           }
-          &:nth-child(3) { .mr(24);
+          &:nth-child(3) { .mr(32);
             span { .-a(#1f479b,10px); }
             i { color:#1f479b; }
           }
-          &:nth-child(4) { .mr(24);
+          &:nth-child(4) { .mr(34);
             span { .-a(#146f6c,10px); }
             i { color:#146f6c; }
           }
-          &:nth-child(5) { .mr(8);
+          &:nth-child(5) { .mr(19);
             span { .-a(#09963d,10px); }
             i { color:#09963d; }
           }
@@ -186,19 +183,19 @@ export default {
       }
       .result4 { .lt(1047,881);
         li { .wh(60,130); .abs; .lb(57,0);  .max-h(240);
-          span { .ib; .w(64); .bgc(#325de7); .br-t(30); .abs; .lb; .min-h(35); }
+          span { .ib; .w(64); .bgc(#1c25c5); .br-t(30); .abs; .lb; .min-h(35); }
           i { .wf; .lb; }
           &:nth-child(2) { .l(231);
-            span { .bgc(#329ce7); }
+            span { .bgc(#1f479b); }
           }
           &:nth-child(3) { .l(411);
-            span { .bgc(#5d32e7); }
+            span { .bgc(#146f6c); }
           }
           &:nth-child(4) { .l(603);
-            span { .bgc(#c332e7); }
+            span { .bgc(#09963d); }
           }
           &:nth-child(5) { .l(785);
-            span { .bgc(#325de7); }
+            span { .bgc(#00be10); }
           }
         }
       }
