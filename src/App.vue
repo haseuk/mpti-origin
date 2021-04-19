@@ -23,6 +23,11 @@ export default {
       if (this.audioPlaying) return;
       document.querySelector('audio').play();
       this.audioPlaying = true;
+    },
+    audioStop() {
+      if (!this.audioPlaying) return;
+      document.querySelector('audio').pause();
+      this.audioPlaying = false;
     }
   },
 }

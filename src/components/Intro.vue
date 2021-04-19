@@ -3,7 +3,7 @@
     <transition name="fade">
       <div v-if="page === 'intro'" :key="1" class="intro">
         <img src="/img/intro-main.png" alt="mpti에 오신걸 환영합니다.">
-        <a class="start" @click="start">참여하기</a>
+        <a class="start" @click="page = 'code'">참여하기</a>
       </div>
       <div v-else-if="page === 'code'" :key="2" class="code">
         <img src="/img/intro-codechk.png" alt="코드/성함 입력">
@@ -26,7 +26,7 @@
       <div v-else-if="page === 'welcome'" :key="4" class="welcome">
         <img src="/img/survey-start.png" alt="설문을 시작하겠습니다.">
         <p>{{ doctor.hospital }}<br> {{ doctor.name }}선생님 안녕하세요!</p>
-        <RouterLink to="/choice">시작하기</RouterLink>
+        <a @click="start">시작하기</a>
       </div>
     </transition>
 
@@ -98,7 +98,7 @@ export default {
   },
   methods: {
     start() {
-      this.page = 'code';
+      this.$router.push('/choice');
       this.$parent.audioStart();
     },
     async submit() {
@@ -145,6 +145,9 @@ export default {
       this.page = 'welcome';
     },
   },
+  mounted() {
+    this.$parent.audioStop();
+  }
 }
 </script>
 

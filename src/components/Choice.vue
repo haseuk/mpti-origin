@@ -37,7 +37,7 @@ export default {
     },
     choice(v) {
       this.reverseImg = v;
-      setTimeout(() => {this.$router.push(`/survey/${v}`)}, 2000);
+      setTimeout(() => {this.$router.push(`/survey/${v}`)}, 800);
     },
   }
 }
