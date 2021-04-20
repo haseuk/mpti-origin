@@ -28,8 +28,7 @@
             <ul>
               <li v-for="(example, i) in que.q6.examples" :key="example.idx">
                 <div>
-<!--                  <span :style="{width: (perMax('q6', i) / 100) * 80 + 60 + 'px', height: (perMax('q6', i) / 100) * 80 + 60 + 'px'}">{{ perMax('q6', i).toFixed(1) }}%-->
-                  <span style="width: 100%;height:100%;">{{ perMax('q6', i).toFixed(1) }}%
+                  <span :style="{width: (perMax('q6', i) / 100) * 80 + 60 + 'px', height: (perMax('q6', i) / 100) * 80 + 60 + 'px'}">{{ perMax('q6', i).toFixed(1) }}%
                     <s></s>
                     <i>{{ perSum('q6', i).toFixed(0) }}%</i>
                   </span>
