@@ -18,7 +18,7 @@
             <ul>
               <li v-for="(example, i) in que.q5.examples" :key="example.idx">
                 <div>
-                  <span :style="{width: perMax('q5', i) + '%'}">{{ perMax('q5', i).toFixed(1) }}%</span>
+                  <span :style="{width: (perMax('q5', i) / 100) * 365 + 35 + 'px'}">{{ perMax('q5', i).toFixed(1) }}%</span>
                   <i>{{ perSum('q5', i).toFixed(0) }}%</i>
                 </div>
               </li>
@@ -28,7 +28,8 @@
             <ul>
               <li v-for="(example, i) in que.q6.examples" :key="example.idx">
                 <div>
-                  <span :style="{width: perMax('q6', i) + '%', height: perMax('q6', i) + '%'}">{{ perMax('q6', i).toFixed(1) }}%
+<!--                  <span :style="{width: (perMax('q6', i) / 100) * 80 + 60 + 'px', height: (perMax('q6', i) / 100) * 80 + 60 + 'px'}">{{ perMax('q6', i).toFixed(1) }}%-->
+                  <span style="width: 100%;height:100%;">{{ perMax('q6', i).toFixed(1) }}%
                     <s></s>
                     <i>{{ perSum('q6', i).toFixed(0) }}%</i>
                   </span>
@@ -41,7 +42,7 @@
             <ul>
               <li v-for="(example, i) in que.q7.examples" :key="example.idx">
                 <div>
-                  <span :style="{height: perMax('q7', i) + '%'}">{{ perMax('q7', i).toFixed(0) }}%</span>
+                  <span :style="{height: (perMax('q7', i) / 100) * 95 + 35 + 'px'}">{{ perMax('q7', i).toFixed(0) }}%</span>
                   <i>{{ perSum('q7', i).toFixed(0) }}%</i>
                 </div>
               </li>
@@ -151,7 +152,7 @@ export default {
           }
         }
       }
-      .result3 { .lt(1055,345);
+      .result3 { .w(915); .tc; .lt(1025,345);
         li { .wh(140,140); .max-w(150); .max-h(150); .ib; .rel; .m(0,40,70);
           div { .f; .rel;
             span { .ib; .br(50%); .min-w(60); .min-h(60); .abs; .lb(50%,20); transform: translateX(-50%); .-box; background: linear-gradient(90deg, rgba(245,245,246,1) 0%, rgba(244,245,246,1) 100%);
