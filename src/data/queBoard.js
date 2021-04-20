@@ -10,8 +10,8 @@ export default {
       qImg: 'm4-s-1-0.png',
       aImg: 'm4-s-1-2.png',
       examples: [
-        {idx: 'a', next: 'q2', label: '혈압과의 싸움에서는 선제압이 중요!\n 즉시 혈압강하제 처방을 고려한다.'},
-        {idx: 'b', next: 'q3', label: '운동과 식이요법은 모든 처방에 우선!\n 약처방 보다는 LSM을 먼저 권한다.'}
+        {idx: 'a', next: 'q2', label: '혈압과의 싸움에서는 선제압이 중요!<br> 즉시 혈압강하제 처방을 고려한다.'},
+        {idx: 'b', next: 'q3', label: '운동과 식이요법은 모든 처방에 우선!<br> 약처방 보다는 LSM을 먼저 권한다.'}
       ],
       type: 'radio',
     },
