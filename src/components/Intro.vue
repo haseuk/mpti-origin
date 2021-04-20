@@ -178,10 +178,9 @@ export default {
     .submit { .wh(400,120); .ib; .abs; .lt(798,964); }
   }
   .welcome { .fs(40);
-    p { .fs(110); .lh(140); color:#1c25c5; .wf; .bold; .abs; .tc; .t(317); }
+    p { .fs(90); .lh(140); color:#1c25c5; .wf; .bold; .abs; .tc; .t(317); }
     a { .fs(0); .abs; .wh(686,149); .lt(50%,814); transform: translateX(-50%); }
   }
-
 
 
   .popup { font-size: 40px; .f; .fix; .lt;

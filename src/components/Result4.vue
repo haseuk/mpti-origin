@@ -32,6 +32,7 @@
                     <s></s>
                     <i>{{ perSum('q6', i).toFixed(0) }}%</i>
                   </span>
+                  <p :class="'label' + i">{{ example.label }}</p>
                 </div>
               </li>
             </ul>
@@ -114,7 +115,7 @@ export default {
     .graph {
       > div { .abs; .lt; }
       .result {
-        i { .fs(26); color:#fff; .bold; .abs; .ib; .tc; }
+        i { .fs(26); color:#fff; .bold; .abs; .ib; .tc; white-space: pre; }
       }
       .result1 { .lt(416,321);
         li { .wh(64,220); .max-h(220); .ib; .abs; .lt;
@@ -131,7 +132,7 @@ export default {
         }
       }
       .result2 { .lt(493,683);
-        li { .wh(240,64); .block; .max-w(240); .mb(29);
+        li { .wh(400,64); .block; .max-w(400); .mb(29);
           div { .hf; .rel;
             span { .ib; .h(64); .bgc(#1c25c5); .br(32); border-top-left-radius:0; border-bottom-left-radius:0; .abs; .lb; .min-w(35); }
             i { .lh(64); .f; .tl; .pl(5); }
@@ -150,38 +151,50 @@ export default {
           }
         }
       }
-      .result3 { .lt(1030,322);
-        li { .wh(160); .max-w(160); .max-h(160); .ib; .rel;
+      .result3 { .lt(1055,345);
+        li { .wh(140,140); .max-w(150); .max-h(150); .ib; .rel; .m(0,40,70);
           div { .f; .rel;
-            span { .ib; .br(50%); .min-w(60); .min-h(60); .abs; .lb(50%,0); transform: translateX(-50%); .-box; background: linear-gradient(90deg, rgba(245,245,246,1) 0%, rgba(244,245,246,1) 100%);
+            span { .ib; .br(50%); .min-w(60); .min-h(60); .abs; .lb(50%,20); transform: translateX(-50%); .-box; background: linear-gradient(90deg, rgba(245,245,246,1) 0%, rgba(244,245,246,1) 100%);
               s { .wh(80%,80%); .abs; .lt(50%,50%); transform: translate(-50%,-50%); .contain('/img/circle.png'); }
               i { .wf; .lt(0,50%); transform: translateY(-50%); .ls(-1); }
             }
+            p { .fs(24); .bold; .abs; .lt(50%,125); transform: translateX(-50%); }
           }
-          &:nth-child(1), &:nth-child(7), &:nth-child(8) { .hide; }
-          &:nth-child(2) { .mr(18);
+          &:nth-child(1) {
             span { .-a(#1c25c3,10px); }
-            i { color:#1c25c3; }
+            i, p { color:#1c25c3; }
           }
-          &:nth-child(3) { .mr(32);
-            span { .-a(#1f479b,10px); }
-            i { color:#1f479b; }
+          &:nth-child(2) {
+            span { .-a(#1f4699,10px); }
+            i, p { color:#1f4699; }
           }
-          &:nth-child(4) { .mr(34);
-            span { .-a(#146f6c,10px); }
-            i { color:#146f6c; }
+          &:nth-child(3) {
+            span { .-a(#146e6b,10px); }
+            i, p { color:#146e6b; }
           }
-          &:nth-child(5) { .mr(19);
-            span { .-a(#09963d,10px); }
-            i { color:#09963d; }
+          &:nth-child(4) {
+            span { .-a(#09943c,10px); }
+            i, p { color:#09943c; }
+          }
+          &:nth-child(5) {
+            span { .-a(#00bc10,10px); }
+            i, p { color:#00bc10; }
           }
           &:nth-child(6) {
-            span { .-a(#00be10,10px); }
-            i { color:#00be10; }
+            span { .-a(#146e6b,10px); }
+            i, p { color:#146e6b; }
+          }
+          &:nth-child(7) {
+            span { .-a(#1f4699,10px); }
+            i, p { color:#1f4699; }
+          }
+          &:nth-child(8) {
+            span { .-a(#1a23be,10px); }
+            i, p { color:#1a23be; }
           }
         }
       }
-      .result4 { .lt(1047,881);
+      .result4 { .lt(1047,931);
         li { .wh(60,130); .abs; .lb(57,0);  .max-h(240);
           span { .ib; .w(64); .bgc(#1c25c5); .br-t(30); .abs; .lb; .min-h(35); }
           i { .wf; .lb; }
