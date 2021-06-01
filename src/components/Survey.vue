@@ -4,7 +4,7 @@
       <div v-if="queBox" class="queBox" :key="step">
         <img :src="`/img/${que.qImg}`" alt="survey">
         <img :src="`/img/${que.img}`" class="doctors">
-        <TypeText :value="que.qText" :delay="1000" class="q-text" v-if="step === 'q0'"/>
+        <p v-html="que.qText" class="q-text" v-if="step === 'q0'"/>
         <a @click="step = 'q1'" class="ans-view">다음</a>
       </div>
 
@@ -28,11 +28,9 @@
 <script>
 import QueData from "@/data/queBoard";
 import axios from 'axios';
-import TypeText from "@/components/TypeText";
 
 export default {
   name: "Survey",
-  components: {TypeText},
   data() {
     return {
       step: 'q0',
@@ -43,11 +41,11 @@ export default {
   watch: {
     async step() {
       if (!this.answer[this.step]) this.answer[this.step] = [];
-      this.queBox = true;
-      if (!this.que.qText) {
-        await this.sleep(2500);
-        this.ansView();
-      }
+      this.queBox = false;
+      // if (!this.que.qText) {
+      //   await this.sleep(2500);
+      //   this.ansView();
+      // }
     }
   },
   computed: {
@@ -62,9 +60,9 @@ export default {
     }
   },
   methods: {
-    ansView() {
-      this.queBox = false;
-    },
+    // ansView() {
+    //   this.queBox = false;
+    // },
     async nextQue() {
       if (!this.answer[this.step] || this.answer[this.step].length === 0) {
         alert('답변을 선택해주세요');

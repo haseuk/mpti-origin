@@ -170,10 +170,10 @@ export default {
     .next { .wh(200,82); .ib; .abs; .lt(987,980); }
   }
   .input {
-    input { .fs(42); .wh(657,105); .l(753);
-      &.code { .t(532); }
-      &.department { .t(663); }
-      &.name { .t(793); }
+    input { .fs(42); .wh(590,105); .l(780);
+      &.code { .t(543); }
+      &.department { .t(659); }
+      &.name { .t(777); }
     }
     .submit { .wh(400,120); .ib; .abs; .lt(798,964); }
   }
