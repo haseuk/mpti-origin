@@ -12,7 +12,7 @@
     </transition>
 
     <transition name="fade">
-      <div class="popup" v-if="celeb || eventPopup || giftPopup || boomPopup">
+      <div class="popup" v-if="eventPopup || giftPopup || boomPopup">
         <div class="dim"></div>
         <div class="holder">
           <div class="panel event-popup" v-if="eventPopup">
@@ -27,10 +27,10 @@
             <a class="close" @click="giftResolve()"></a>
             <img src="/img/celebration.png" alt="">
           </div>
-        </div>
-        <div class="celeb" v-if="celeb">
-          <img src="/img/celebration-20mg.png" alt="텔미트렌20MG 매출1억 돌파">
-          <a class="close" @click="celeb = false"></a>
+          <div class="panel gift-popup" v-if="boomPopup">
+            <a class="close" @click="boomResolve()"></a>
+            <img src="/img/boom.png" alt="">
+          </div>
         </div>
       </div>
     </transition>
@@ -65,7 +65,6 @@ export default {
       gift: null,
       boomResolve: null,
       giftResolve: null,
-      celeb: true
     }
   },
   computed: {
@@ -165,10 +164,6 @@ export default {
             i { .fs(80); .mb(30); .ib; color:#1c25c5; }
           }
         }
-      }
-      .celeb { z-index: 55; .fix;
-        img { .wh(2000,1200); .block; }
-        .close { .abs; .rt(20,20); .contain('/img/close.png'); .wh(101,103); z-index: 3; }
       }
     }
   }

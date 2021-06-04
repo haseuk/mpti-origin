@@ -52,6 +52,18 @@
         <a href="/" class="home">홈으로 가기</a>
       </div>
     </transition>
+
+    <transition name="fade">
+      <div class="popup" v-if="popup">
+        <div class="dim"></div>
+        <div class="holder">
+          <div class="celeb">
+            <img src="/img/celebration-20mg.png" alt="텔미트렌20MG 매출1억 돌파">
+            <a class="close" @click="popup = null"></a>
+          </div>
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -68,7 +80,8 @@ export default {
       group: null,
       sums: {},
       max: {},
-      month: '202104'
+      month: '202104',
+      popup: true
     }
   },
   computed: {
@@ -215,5 +228,15 @@ export default {
     }
     .back { .wh(350,97); .abs; .lt(1320,1020); }
     .home { .wh(316,132); .ib; .abs; .lt; z-index: 1; }
+
+    .popup { font-size: 40px; .f; .fix; .lt;
+      .dim { .fix; .lt; width:100%; height:120%; background: rgba(0,0,0,0.6); z-index: 50; }
+      .holder { .abs; .lt; z-index: 51;
+        .celeb { z-index: 55; .fix;
+          img { .wh(2000,1200); .block; }
+          .close { .abs; .rt(20,20); .contain('/img/close.png'); .wh(101,103); z-index: 3; }
+        }
+      }
+    }
   }
 </style>
