@@ -65,6 +65,7 @@ export default {
       gift: null,
       boomResolve: null,
       giftResolve: null,
+
     }
   },
   computed: {
