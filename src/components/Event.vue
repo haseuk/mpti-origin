@@ -2,7 +2,7 @@
   <div event>
     <transition name="fade">
       <div>
-        <img src="/img/event.png" alt="">
+        <img src="/img/event2.png" alt="">
         <img src="/img/wheel.png" class="wheel" :style="spinValue">
         <img src="/img/arrow.png" class="arrow">
         <a class="event-btn btn" @click="check">참여하기</a>
@@ -29,7 +29,7 @@
           </div>
           <div class="panel gift-popup" v-if="boomPopup">
             <a class="close" @click="boomResolve()"></a>
-            <img src="/img/boom.png" alt="">
+            <img src="/img/boom2.jpg" alt="">
           </div>
         </div>
       </div>
@@ -65,7 +65,6 @@ export default {
       gift: null,
       boomResolve: null,
       giftResolve: null,
-
     }
   },
   computed: {
@@ -140,7 +139,7 @@ export default {
     .wheel { .abs; .lt(1023,189); transition: 4s; transition-delay: 0.8s; transition-timing-function: ease; }
     .arrow { .abs; .lt(1280,366); }
     .btn { .abs;
-      &.event-btn { .wh(716,115); .lt(126,575); }
+      &.event-btn { .wh(716,175); .lt(126,575); }
       &.result-btn { .wh(360,108); .lt(308,1005); }
     }
     .home { .wh(316,132); .ib; .abs; .lt; z-index: 1; }
