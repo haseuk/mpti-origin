@@ -159,7 +159,7 @@ export default {
           .roulette { color:#fff; .wh(390,100); .ib; .bgc(#1c25c5); .mt(65); .br(16); }
         }
         .gift-popup {
-          img { .wh(1100,704); }
+          img { .wh(1000,640); }
           p { .fs(60); .w(1000); .lh(80); .bold; .bgc(#fff); .br(28); .p(150,0); .tc;
             i { .fs(80); .mb(30); .ib; color:#1c25c5; }
           }
