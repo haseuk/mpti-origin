@@ -58,7 +58,7 @@ export default {
           a { .rel; .f; .block; z-index: 1; }
           &[data-month="202104"] {
             .front { .contain('/img/front-img4.png'); }
-            .back { .contain('/img/completed.png'); }
+            .back { .contain('/img/back-img4.png'); }
           }
           &[data-month="202107"] {
             .front { .contain('/img/front-img4.png'); }
