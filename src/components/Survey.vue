@@ -1,10 +1,10 @@
 <template>
-  <div survey>
+  <div survey :class="'v' + month">
     <transition name="fade">
       <div v-if="queBox" class="queBox" :key="step">
         <img :src="`/img/${que.qImg}`" alt="survey">
         <img :src="`/img/${que.img}`" class="doctors">
-        <p v-html="que.qText" class="q-text" v-if="step === 'q0'"/>
+        <p v-html="que.qText" class="q-text" v-if="step === 'q0'" />
         <a @click="step = 'q1'" class="ans-view">다음</a>
       </div>
 
@@ -105,6 +105,19 @@ export default {
 @import "~@/less/asset";
 
   [survey] {
+    &.v202107 {
+      .queBox {
+        .doctors { .hide; }
+        .q-text { .t(210); }
+      }
+      .input-box {
+        &.q2 {
+          label {
+            p { .fs(45); }
+          }
+        }
+      }
+    }
     > div { .abs; .lt; }
     div a { .wh(437,120); .ib; .abs; .lt(781,911); z-index: 5; }
     .queBox {

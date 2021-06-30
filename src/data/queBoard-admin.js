@@ -1,14 +1,12 @@
 export default {
   202104: {
-    q0: {
-      part: { num: 1_1, q: '난생 첫 고혈압을 진단을 받은 아래의 환자, 이 환자에게 어떤 관리 조치를 할 예정이십니까?' },
+    q1: {
+      part: { num: '1-1', q: '난생 첫 고혈압을 진단을 받은 아래의 환자, 이 환자에게 어떤 관리 조치를 할 예정이십니까?' },
       qImg: 'm4-s-1-1.png',
       qText: '대기업 영업관리 별과장, 나이 45세, 키 180cm, 몸무게 80kg으로<br> 말끔한 외모에 가정적인 성격의 소유자. 10년 이상의 금연 생활에 술도<br> 한달에 두어 번 정도로 평소에 건강은 자신 있어 했는데…<br> 얼마전 태어난 둘째의 매력에 푹 빠져 지내던 그는, 올해 건강검진에서<br> 혈압 143/95mmHg로 고혈압 진단을 받아서 본인 뿐만 아니라 주변<br> 사람들 모두 놀라고 있음.',
-      img: 'doctors.png',
-    },
-    q1: {
-      qImg: 'm4-s-1-0.png',
       aImg: 'm4-s-1-2.png',
+      img: 'doctors.png',
+      curtain: 'curtain-mover',
       examples: [
         {idx: 'a', next: 'q2', label: '혈압과의 싸움에서는 선제압이 중요!<br> 즉시 혈압강하제 처방을 고려한다.'},
         {idx: 'b', next: 'q3', label: '운동과 식이요법은 모든 처방에 우선!<br> 약처방 보다는 LSM을 먼저 권한다.'}
@@ -16,7 +14,7 @@ export default {
       type: 'radio',
     },
     q2: {
-      part: { num: 1_2, q: '왜 혈압강하제 처방을 먼저 고려하셨나요?' },
+      part: { num: '1-2', q: '왜 혈압강하제 처방을 먼저 고려하셨나요?' },
       qImg: 'm4-s-2-1.png',
       aImg: 'm4-s-2-2.png',
       examples: [
@@ -29,7 +27,7 @@ export default {
       type: 'checkbox',
     },
     q3: {
-      part: { num: 1_2, q: '왜 생활습관 개선을 먼저 권하셨나요?' },
+      part: { num: '1-2', q: '왜 생활습관 개선을 먼저 권하셨나요?' },
       qImg: 'm4-s-3-1.png',
       aImg: 'm4-s-3-2.png',
       examples: [
@@ -42,7 +40,7 @@ export default {
       type: 'checkbox',
     },
     q4: {
-      part: { num: 2_1, q: '선생님께서는 텔미트렌 20mg을 처방해보신 경험이 있으신지요?' },
+      part: { num: '2-1', q: '선생님께서는 텔미트렌 20mg을 처방해보신 경험이 있으신지요?' },
       qImg: 'm4-s-4-1.png',
       aImg: 'm4-s-4-2.png',
       examples: [
@@ -52,7 +50,7 @@ export default {
       type: 'radio',
     },
     q5: {
-      part: { num: 2_1, q: '텔미트렌 20mg을 어떤 환자에게 처방하셨나요?' },
+      part: { num: '2-1', q: '텔미트렌 20mg을 어떤 환자에게 처방하셨나요?' },
       qImg: 'm4-s-5-1.png',
       aImg: 'm4-s-5-2.png',
       examples: [
@@ -66,7 +64,7 @@ export default {
       type: 'checkbox',
     },
     q6: {
-      part: { num: 2_2, q: '텔미트렌 20mg은 어떤 ARB 제제를 대신하여 처방하셨나요?' },
+      part: { num: '2-2', q: '텔미트렌 20mg은 어떤 ARB 제제를 대신하여 처방하셨나요?' },
       qImg: 'm4-s-6-1.png',
       aImg: 'm4-s-6-2.png',
       examples: [
@@ -83,7 +81,7 @@ export default {
       type: 'checkbox',
     },
     q7: {
-      part: { num: 2_3, q: '텔미트렌 20mg의 혈압 강하 효과에 대해 어떻게 생각하시나요? ' },
+      part: { num: '2-3', q: '텔미트렌 20mg의 혈압 강하 효과에 대해 어떻게 생각하시나요? ' },
       qImg: 'm4-s-7-1.png',
       aImg: 'm4-s-7-2.png',
       examples: [
@@ -97,7 +95,7 @@ export default {
       type: 'radio',
     },
     q8: {
-      part: { num: 2_4, q: '기존 텔미사르탄 제제와 비교해서 종근당 텔미트렌의 장점은 무엇이라고 생각하시나요?' },
+      part: { num: '2-4', q: '기존 텔미사르탄 제제와 비교해서 종근당 텔미트렌의 장점은 무엇이라고 생각하시나요?' },
       qImg: 'm4-s-8-1.png',
       aImg: 'm4-s-8-2.png',
       examples: [
@@ -111,7 +109,7 @@ export default {
       type: 'radio',
     },
     q9: {
-      part: { num: 2_5, q: '텔미트렌 20mg을 처방하시지 않은 이유는 무엇인가요?' },
+      part: { num: '2-5', q: '텔미트렌 20mg을 처방하시지 않은 이유는 무엇인가요?' },
       qImg: 'm4-s-9-1.png',
       aImg: 'm4-s-9-2.png',
       examples: [
@@ -124,7 +122,7 @@ export default {
       type: 'checkbox',
     },
     q10: {
-      part: { num: 2_5, q: '향후 텔미트렌 20mg을 처방하실 의향이 있으신가요?' },
+      part: { num: '2-5', q: '향후 텔미트렌 20mg을 처방하실 의향이 있으신가요?' },
       qImg: 'm4-s-10-1.png',
       aImg: 'm4-s-10-2.png',
       examples: [
@@ -137,14 +135,10 @@ export default {
     },
   },
   202107: {
-    q0: {
-      part: { num: 1_1, q: '<strong>혈압강하제 처방이 결정된</strong> 다음과 같은<br> 중위험군 환자, 이 환자에게 처방을 하신다면?' },
+    q1: {
+      part: { num: '1-1', q: '<strong>혈압강하제 처방이 결정된</strong> 다음과 같은<br> 중위험군 환자, 이 환자에게 처방을 하신다면?' },
       qImg: 'm7-s-1-1.png',
       qText: '박미래씨는 57세의 부동산 중개인. 동네 방앗간 역할을 해서 사무실에<br> 사람이 끊이질 않는다. 모이면 어디가 맛집이네, 디저트 카페가 새로<br> 생겼네, 등의 소식이 많은데.. 사실 지난 달 건강검진에서 비만과 고혈압<br> 진단을 받아서 기분이 울적하다. 소싯적엔 55사이즈였는데,<br> <strong style="color:#000;">BMI</strong> 28 kg/m2 허리둘레 86 cm이라니! 작년에 큰아들이 군대에 간<br> 뒤부터는 밤에 남편과 맥주 한 잔 씩 하다 보니 더 찐 것 같다. 혈압도<br> 155/97 mmHg로 1기 고혈압이라던데, 이러다간 막내 대학 보내고<br> 계획했던 유럽여행도 못 가는 것 아닌지 모르겠다.',
-      img: 'doctors.png',
-    },
-    q1: {
-      qImg: 'm7-s-1-0.png',
       aImg: 'm7-s-1-2.png',
       examples: [
         {idx: 'a', next: 'q2', label: '부작용이 생길 수도 있으니..<br> 차근차근 저용량부터 시작한다.'},
@@ -153,7 +147,7 @@ export default {
       type: 'radio',
     },
     q2: {
-      part: { num: 1_2, q: '저용량으로 시작하시게 된 이유는 무엇인가요?' },
+      part: { num: '1-2', q: '저용량으로 시작하시게 된 이유는 무엇인가요?' },
       qImg: 'm7-s-2-1.png',
       aImg: 'm7-s-2-2.png',
       examples: [
@@ -166,7 +160,7 @@ export default {
       type: 'checkbox',
     },
     q3: {
-      part: { num: 1_2, q: '고용량으로 시작하시게 된 이유는 무엇인가요?' },
+      part: { num: '1-2', q: '고용량으로 시작하시게 된 이유는 무엇인가요?' },
       qImg: 'm7-s-3-1.png',
       aImg: 'm7-s-3-2.png',
       examples: [
@@ -179,7 +173,7 @@ export default {
       type: 'checkbox',
     },
     q4: {
-      part: { num: 2_1, q: '선생님께서는 텔미트렌 20mg을 처방해보신 경험이 있으신지요?' },
+      part: { num: '2-1', q: '선생님께서는 텔미트렌 20mg을 처방해보신 경험이 있으신지요?' },
       qImg: 'm4-s-4-1.png',
       aImg: 'm4-s-4-2.png',
       examples: [
@@ -189,7 +183,7 @@ export default {
       type: 'radio',
     },
     q5: {
-      part: { num: 2_1, q: '텔미트렌 20mg을 어떤 환자에게 처방하셨나요?' },
+      part: { num: '2-1', q: '텔미트렌 20mg을 어떤 환자에게 처방하셨나요?' },
       qImg: 'm4-s-5-1.png',
       aImg: 'm4-s-5-2.png',
       examples: [
@@ -203,7 +197,7 @@ export default {
       type: 'checkbox',
     },
     q6: {
-      part: { num: 2_2, q: '텔미트렌 20mg은 어떤 ARB 제제를 대신하여 처방하셨나요?' },
+      part: { num: '2-2', q: '텔미트렌 20mg은 어떤 ARB 제제를 대신하여 처방하셨나요?' },
       qImg: 'm4-s-6-1.png',
       aImg: 'm4-s-6-2.png',
       examples: [
@@ -220,7 +214,7 @@ export default {
       type: 'checkbox',
     },
     q7: {
-      part: { num: 2_3, q: '텔미트렌 20mg의 혈압 강하 효과에 대해 어떻게 생각하시나요? ' },
+      part: { num: '2-3', q: '텔미트렌 20mg의 혈압 강하 효과에 대해 어떻게 생각하시나요? ' },
       qImg: 'm4-s-7-1.png',
       aImg: 'm4-s-7-2.png',
       examples: [
@@ -234,7 +228,7 @@ export default {
       type: 'radio',
     },
     q8: {
-      part: { num: 2_4, q: '기존 텔미사르탄 제제와 비교해서 종근당 텔미트렌의 장점은 무엇이라고 생각하시나요?' },
+      part: { num: '2-4', q: '기존 텔미사르탄 제제와 비교해서 종근당 텔미트렌의 장점은 무엇이라고 생각하시나요?' },
       qImg: 'm4-s-8-1.png',
       aImg: 'm4-s-8-2.png',
       examples: [
@@ -248,7 +242,7 @@ export default {
       type: 'radio',
     },
     q9: {
-      part: { num: 2_5, q: '텔미트렌 20mg을 처방하시지 않은 이유는 무엇인가요?' },
+      part: { num: '2-5', q: '텔미트렌 20mg을 처방하시지 않은 이유는 무엇인가요?' },
       qImg: 'm4-s-9-1.png',
       aImg: 'm4-s-9-2.png',
       examples: [
@@ -261,7 +255,7 @@ export default {
       type: 'checkbox',
     },
     q10: {
-      part: { num: 2_5, q: '향후 텔미트렌 20mg을 처방하실 의향이 있으신가요?' },
+      part: { num: '2-5', q: '향후 텔미트렌 20mg을 처방하실 의향이 있으신가요?' },
       qImg: 'm4-s-10-1.png',
       aImg: 'm4-s-10-2.png',
       examples: [
