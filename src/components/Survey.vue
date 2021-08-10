@@ -120,12 +120,20 @@ export default {
     }
     &.v202108 {
       .queBox {
-        .q-text { .lt(700,210); }
+        .doctors { .hide; }
+        .q-text { .lt(700,200); }
       }
       .input-box {
         &.q2 {
           label {
             p { .fs(45); }
+          }
+        }
+        &.q3 {
+          .inner + a { .t(1049); }
+          label {
+            p { .fs(45); }
+            &:nth-child(3) p, &:nth-child(4) p { .t(13); .lh(50); }
           }
         }
       }
@@ -190,7 +198,7 @@ export default {
           p { .t(30); }
         }
       }
-      &.q2, &.q3, &.q4, &.q5, &.q6, &.q7, &.q8, &.q9, &.q10 { .pt(346);
+      &.q2, &.q3, &.q4, &.q5, &.q6, &.q7, &.q8, &.q9, &.q10, &.q2r, &.q3r { .pt(346);
         label { .mb(20);
           p { .fs(54); .l(120); }
         }
@@ -215,7 +223,7 @@ export default {
         }
         a { .lt(781,1041); }
       }
-      &.q6 {
+      &.q6, &.q2r, &.q3r {
         .inner { .h(565);
           label { .mr(112); .ml(80); .ib;
             &:nth-child(n+5) { .mr(0); .ml(0); }

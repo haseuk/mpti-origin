@@ -237,21 +237,48 @@ export default {
       ],
     },
     q2: {
-      part: { num: '1-2', q: '저용량으로 시작하시게 된 이유는 무엇인가요?' },
+      part: { num: '1-2', q: '특정 ARB 제제 처방을 고려하시게 된 이유는 무엇인가요? (복수 선택 가능)' },
       examples: [
-        {idx: 'a', label: '1기 고혈압은 저용량으로도 충분하다고 생각해서'},
-        {idx: 'b', label: '위험인자 중 비만은 생활습관 개선으로 일부 조절이 가능하므로'},
-        {idx: 'c', label: '고용량 처방 후 발생 가능한 부작용을 피하기 위해서'},
+        {idx: 'a', label: '당뇨병과 미세알부민뇨를 동반한 환자여서'},
+        {idx: 'b', label: '특정 ARB의 혈압조절 효과가 타 ARB보다 우수하다고 생각하므로'},
+        {idx: 'c', label: '특정 ARB의 심혈관질환 위험성 감소 적응증을 고려해서'},
         {idx: 'd', label: '기타'},
       ],
     },
-    q3: {
-      part: { num: '1-2', q: '고용량으로 시작하시게 된 이유는 무엇인가요?' },
+    q2r: {
+      part: { num: '1-2-1', q: '다음 ARB 제제 중 처방을 고려하실 약물은 무엇인가요? (복수 선택 가능)' },
       examples: [
-        {idx: 'a', label: '일단 신속한 혈압 관리가 필요해서'},
-        {idx: 'b', label: '비만이라는 위험인자를 보유한 환자이므로'},
-        {idx: 'c', label: '직업상 규칙적인 운동 등 생활습관 개선이 어려워서'},
-        {idx: 'd', label: '기타'},
+        {idx: 'a', label: 'Losartan'},
+        {idx: 'b', label: 'Candesartan'},
+        {idx: 'c', label: 'Telmisartan 80mg'},
+        {idx: 'd', label: 'Telmisartan 20~40mg'},
+        {idx: 'e', label: 'Olmesartan'},
+        {idx: 'f', label: 'Valsartan'},
+        {idx: 'g', label: 'Fimasartan'},
+        {idx: 'h', label: '기타 ARB (______)'},
+      ],
+    },
+    q3: {
+      part: { num: '1-2', q: '주로 처방해왔던 ARB 제제 처방을 고려하시게 된 이유는 무엇인가요? (복수 선택 가능)' },
+      examples: [
+        {idx: 'a', label: 'ARB 간에 효과 차이는 없다고 생각하므로 (class effect)'},
+        {idx: 'b', label: '주로 처방해왔던 ARB 제제의 혈압 강하 효과가 충분하므로'},
+        {idx: 'c', label: '주로 처방해왔던 ARB 제제가 심혈관질환 위험성 감소<br> 적응증을 가지고 있으므로'},
+        {idx: 'd', label: '가이드라인에서 당뇨병이나 신장에 동반 환자에게 ARB를<br> 권고할 때 특정 ARB를 거론하지 않았기 때문에'},
+        {idx: 'e', label: '기타'},
+      ],
+    },
+    q3r: {
+      part: { num: '1-2-1', q: '다음 ARB 제제 중 처방을 고려하실 약물은 무엇인가요? (복수 선택 가능)' },
+      examples: [
+        {idx: 'a', label: 'Losartan'},
+        {idx: 'b', label: 'Candesartan'},
+        {idx: 'c', label: 'Telmisartan (40mg, 80mg)'},
+        {idx: 'd', label: 'Telmisartan (20mg)'},
+        {idx: 'e', label: 'Olmesartan'},
+        {idx: 'f', label: 'Valsartan'},
+        {idx: 'g', label: 'Fimasartan'},
+        {idx: 'h', label: '기타'},
       ],
     },
     q4: {
