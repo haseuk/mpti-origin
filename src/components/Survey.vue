@@ -118,11 +118,25 @@ export default {
         }
       }
     }
+    &.v202108 {
+      .queBox {
+        .q-text { .lt(700,210); }
+      }
+      .input-box {
+        &.q2 {
+          label {
+            p { .fs(45); }
+          }
+        }
+      }
+    }
     > div { .abs; .lt; }
     div a { .wh(437,120); .ib; .abs; .lt(781,911); z-index: 5; }
     .queBox {
       .doctors { .abs; .lt(1480,806); z-index: 1; }
-      .q-text { .fs(47); color:#004a99; .lh(71); font-family: "notokr", arial, sans-serif; .medium; .ls(-4); .abs; .lt(690,278); }
+      .q-text { .fs(47); color:#004a99; .lh(71); font-family: "notokr", arial, sans-serif; .medium; .ls(-4); .abs; .lt(690,278);
+        sup { .fs(27); }
+      }
       .curtain-wrap { .wh(1194,446); .abs; .lt(675,273); overflow: hidden;
         .curtain-inner { .f; .abs; .lt; .bgc(#fff); transition: 3s;
           &.curtain-mover { .t(100%); }

@@ -64,6 +64,10 @@ export default {
             .front { .contain('/img/front-img4.png'); }
             .back { .contain('/img/back-img4.png'); }
           }
+          &[data-month="202108"] {
+            .front { .contain('/img/front-img4.png'); }
+            .back { .contain('/img/back-img4.png'); }
+          }
         }
       }
     }

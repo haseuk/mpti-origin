@@ -124,7 +124,7 @@ export default {
       type: 'checkbox',
     },
     q10: {
-      part: { num: 2_5, q: '향후 텔미트렌 20mg을 처방하실 의향이 있으신가요?' },
+      part: { num: 2_6, q: '향후 텔미트렌 20mg을 처방하실 의향이 있으신가요?' },
       qImg: 'm4-s-10-1.png',
       aImg: 'm4-s-10-2.png',
       examples: [
@@ -140,7 +140,7 @@ export default {
     q0: {
       part: { num: 1_1, q: '<strong>혈압강하제 처방이 결정된</strong> 다음과 같은<br> 중위험군 환자, 이 환자에게 처방을 하신다면?' },
       qImg: 'm7-s-1-1.png',
-      qText: '박미래씨는 57세의 부동산 중개인. 동네 방앗간 역할을 해서 사무실에<br> 사람이 끊이질 않는다. 모이면 어디가 맛집이네, 디저트 카페가 새로<br> 생겼네, 등의 소식이 많은데.. 사실 지난 달 건강검진에서 비만과 고혈압<br> 진단을 받아서 기분이 울적하다. 소싯적엔 55사이즈였는데,<br> <strong style="color:#000;">BMI</strong> 28 kg/m2 허리둘레 86 cm이라니! 작년에 큰아들이 군대에 간<br> 뒤부터는 밤에 남편과 맥주 한 잔 씩 하다 보니 더 찐 것 같다. 혈압도<br> 155/97 mmHg로 1기 고혈압이라던데, 이러다간 막내 대학 보내고<br> 계획했던 유럽여행도 못 가는 것 아닌지 모르겠다.',
+      qText: '박미래씨는 57세의 부동산 중개인. 동네 방앗간 역할을 해서 사무실에<br> 사람이 끊이질 않는다. 모이면 어디가 맛집이네, 디저트 카페가 새로<br> 생겼네, 등의 소식이 많은데.. 사실 지난 달 건강검진에서 비만과 고혈압<br> 진단을 받아서 기분이 울적하다. 소싯적엔 55사이즈였는데,<br> <strong style="color:#000;">BMI</strong> 28 kg/m<sup>2</sup>, 허리둘레 86 cm이라니! 작년에 큰아들이 군대에 간<br> 뒤부터는 밤에 남편과 맥주 한 잔 씩 하다 보니 더 찐 것 같다. 혈압도<br> 155/97 mmHg로 1기 고혈압이라던데, 이러다간 막내 대학 보내고<br> 계획했던 유럽여행도 못 가는 것 아닌지 모르겠다.',
       img: 'doctors.png',
     },
     q1: {
@@ -148,7 +148,7 @@ export default {
       aImg: 'm7-s-1-2.png',
       examples: [
         {idx: 'a', next: 'q2', label: '부작용이 생길 수도 있으니..<br> 차근차근 저용량부터 시작한다.'},
-        {idx: 'b', next: 'q3', label: '점점 나아지겠지 하다 가는 늦는다.<br> 빠르게 잡자! 고용량부터 시작한다.'}
+        {idx: 'b', next: 'q3', label: '점점 나아지겠지 하다가는 늦는다.<br> 빠르게 잡자! 고용량부터 시작한다.'}
       ],
       type: 'radio',
     },
@@ -261,7 +261,7 @@ export default {
       type: 'checkbox',
     },
     q10: {
-      part: { num: 2_5, q: '향후 텔미트렌 20mg을 처방하실 의향이 있으신가요?' },
+      part: { num: 2_6, q: '향후 텔미트렌 20mg을 처방하실 의향이 있으신가요?' },
       qImg: 'm4-s-10-1.png',
       aImg: 'm4-s-10-2.png',
       examples: [
@@ -273,6 +273,142 @@ export default {
       type: 'radio',
     },
   },
-  202108: false,
+  202108: {
+    q0: {
+      part: { num: 1_1, q: '<strong>혈압강하제 처방이 결정된</strong> 다음과 같은<br> 중위험군 환자, 이 환자에게 처방을 하신다면?' },
+      qImg: 'm8-s-1-1.png',
+      qText: '올해 70세인 김세월씨는 정년퇴임 후 아침마다 집 앞 등산로를<br> 걸으면서 BMI 22kg/m2 허리둘레 86cm정도로 유지하고 있다.<br> 그렇지만 여전히 담배도 끊지 못했고 혈압도 160/102 mmHg으로<br> 높다. 이 나이에 혈압약 안 먹는 사람 있나.. 싶다 가도, 지난 칠순<br> 생일에 제2형 당뇨병 때문에 초등학생 손녀가 용돈 모아 사 온<br> 케이크도 못 먹은 생각을 하니 슬프다. 얼마전 병원 검사에서는<br> 미세알부민뇨도 검출되었다고 하여 걱정이 하나 더 늘었다. 건강하게<br> 오래 살아서 손녀 결혼하는 것도 보고 싶은데, 가능할까..?\n',
+      img: 'doctors.png',
+    },
+    q1: {
+      qImg: 'm8-s-1-0.png',
+      aImg: 'm8-s-1-2.png',
+      examples: [
+        {idx: 'a', next: 'q2', label: 'ARB 제제 간에 차이가 있다고 생각하므로<br> 특정 ARB 처방을 고려한다.'},
+        {idx: 'b', next: 'q3', label: 'ARB 제제 간에 차이가 없다고 생각하므로 주로<br> 처방해왔던 ARB 처방을 고려한다.'}
+      ],
+      type: 'radio',
+    },
+    q2: {
+      part: { num: 1_2, q: '저용량으로 시작하시게 된 이유는 무엇인가요?' },
+      qImg: 'm8-s-2-1.png',
+      aImg: 'm8-s-2-2.png',
+      examples: [
+        {idx: 'a', label: '1기 고혈압은 저용량으로도 충분하다고 생각해서'},
+        {idx: 'b', label: '위험인자 중 비만은 생활습관 개선으로 일부 조절이 가능하므로'},
+        {idx: 'c', label: '고용량 처방 후 발생 가능한 부작용을 피하기 위해서'},
+        {idx: 'd', label: '기타'},
+      ],
+      next: 'q4',
+      type: 'checkbox',
+    },
+    q3: {
+      part: { num: 1_2, q: '고용량으로 시작하시게 된 이유는 무엇인가요?' },
+      qImg: 'm8-s-3-1.png',
+      aImg: 'm8-s-3-2.png',
+      examples: [
+        {idx: 'a', label: '일단 신속한 혈압 관리가 필요해서'},
+        {idx: 'b', label: '비만이라는 위험인자를 보유한 환자이므로'},
+        {idx: 'c', label: '직업상 규칙적인 운동 등 생활습관 개선이 어려워서'},
+        {idx: 'd', label: '기타'},
+      ],
+      next: 'q4',
+      type: 'checkbox',
+    },
+    q4: {
+      part: { num: 2_1, q: '선생님께서는 텔미트렌 20mg을 처방해보신 경험이 있으신지요?' },
+      qImg: 'm4-s-4-1.png',
+      aImg: 'm4-s-4-2.png',
+      examples: [
+        {idx: 'a', next: 'q5', label: '있다'},
+        {idx: 'b', next: 'q9', label: '없다'}
+      ],
+      type: 'radio',
+    },
+    q5: {
+      part: { num: 2_1, q: '텔미트렌 20mg을 어떤 환자에게 처방하셨나요?' },
+      qImg: 'm4-s-5-1.png',
+      aImg: 'm4-s-5-2.png',
+      examples: [
+        {idx: 'a', label: '고혈압 초진환자'},
+        {idx: 'b', next: 'q6', label: '기존 ARB 복용 환자'},
+        {idx: 'c', label: '타 계열 고혈압제 복용 환자'},
+        {idx: 'd', label: '동반질환 (당뇨, 이상지질혈증 등) 보유환자'},
+        {idx: 'e', label: '기타'},
+      ],
+      next: 'q7',
+      type: 'checkbox',
+    },
+    q6: {
+      part: { num: 2_2, q: '텔미트렌 20mg은 어떤 ARB 제제를 대신하여 처방하셨나요?' },
+      qImg: 'm4-s-6-1.png',
+      aImg: 'm4-s-6-2.png',
+      examples: [
+        {idx: 'a', label: 'Losartan'},
+        {idx: 'b', label: 'Fimasartan'},
+        {idx: 'c', label: 'Telmisartan (40, 80mg)'},
+        {idx: 'd', label: 'Valsartan'},
+        {idx: 'e', label: 'Olmesartan'},
+        {idx: 'f', label: 'Candesartan'},
+        {idx: 'g', label: 'Azilsartan'},
+        {idx: 'h', label: '기타'},
+      ],
+      next: 'q7',
+      type: 'checkbox',
+    },
+    q7: {
+      part: { num: 2_3, q: '텔미트렌 20mg의 혈압 강하 효과에 대해 어떻게 생각하시나요? ' },
+      qImg: 'm4-s-7-1.png',
+      aImg: 'm4-s-7-2.png',
+      examples: [
+        {idx: 'a', label: '매우 충분하다'},
+        {idx: 'b', label: '충분하다'},
+        {idx: 'c', label: '보통이다'},
+        {idx: 'd', label: '부족하다'},
+        {idx: 'e', label: '매우 부족하다'},
+      ],
+      next: 'q8',
+      type: 'radio',
+    },
+    q8: {
+      part: { num: 2_4, q: '기존 텔미사르탄 제제와 비교해서 종근당 텔미트렌의 장점은 무엇이라고 생각하시나요?' },
+      qImg: 'm4-s-8-1.png',
+      aImg: 'm4-s-8-2.png',
+      examples: [
+        {idx: 'a', label: '성상의 특장점 (40. 80mg에 분할선 추가, 작은 약제 크기<sup>1</sup>)'},
+        {idx: 'b', label: '인습성 개선<sup>2</sup> 으로 편리한 조제 및 높은 복약순응도 향상 기대'},
+        {idx: 'c', label: '20mg, 40mg, 80mg 세 가지 용량으로 다양한 용량옵션 처방 가능'},
+        {idx: 'd', label: '신뢰할 수 있는 회사 제품'},
+        {idx: 'e', label: '기타'},
+      ],
+      next: 'survey-finish',
+      type: 'radio',
+    },
+    q9: {
+      part: { num: 2_5, q: '텔미트렌 20mg을 처방하시지 않은 이유는 무엇인가요?' },
+      qImg: 'm4-s-9-1.png',
+      aImg: 'm4-s-9-2.png',
+      examples: [
+        {idx: 'a', label: '텔미트렌 20mg에 대해 들어본 적이 없어서'},
+        {idx: 'b', label: '20mg과 같은 저용량 제제 처방의 필요성을 못 느껴서'},
+        {idx: 'c', label: '어떤 환자에게 처방하면 좋을지 판단하기 곤란해서'},
+        {idx: 'd', label: '기타'},
+      ],
+      next: 'q10',
+      type: 'checkbox',
+    },
+    q10: {
+      part: { num: 2_6, q: '향후 텔미트렌 20mg을 처방하실 의향이 있으신가요?' },
+      qImg: 'm4-s-10-1.png',
+      aImg: 'm4-s-10-2.png',
+      examples: [
+        {idx: 'a', label: '있다'},
+        {idx: 'b', label: '없다'},
+        {idx: 'c', label: '잘 모르겠다'},
+      ],
+      next: 'survey-finish',
+      type: 'radio',
+    },
+  },
   202109: false,
 }
