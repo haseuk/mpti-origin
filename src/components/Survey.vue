@@ -97,6 +97,7 @@ export default {
   },
   mounted() {
     if (!this.doctor) this.$router.replace('/');
+    if (this.month === '202109') { this.step = 'q1'; }
   }
 }
 </script>
@@ -134,6 +135,27 @@ export default {
           label {
             p { .fs(45); }
             &:nth-child(3) p, &:nth-child(4) p { .t(13); .lh(50); }
+          }
+        }
+      }
+    }
+    &.v202109 {
+      .queBox {
+        .doctors { .hide; }
+        .q-text { .lt(700,200); }
+      }
+      .input-box {
+        &.q1, &.q2, &.q3 { .pt(346);
+          label { .mb(20);
+            .num { .wh(86,86); .l(14); }
+            input { .wh(1325,117); .lh(117); }
+            p { .fs(42); .lh(50); .lt(125,14); .ls(-0.05em);  }
+          }
+          a { .t(1041); }
+        }
+        .inner {
+          label {
+            input:checked:after { .wh(70,68); }
           }
         }
       }

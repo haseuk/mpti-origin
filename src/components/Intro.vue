@@ -99,7 +99,7 @@ export default {
   methods: {
     start() {
       this.$router.push('/choice');
-      this.$parent.audioStart();
+      // this.$parent.audioStart();
     },
     async submit() {
       if(!this.hospitalCode || !this.name) {

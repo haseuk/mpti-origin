@@ -7,6 +7,7 @@ import Event from "@/components/Event";
 import Result4 from "@/components/Result4";
 import Result7 from "@/components/Result7";
 import Result8 from "@/components/Result8";
+import Result9 from "@/components/Result9";
 
 Vue.use(Router);
 
@@ -21,6 +22,7 @@ const router = new Router({
     { path: '/result/202104', name: 'result', component: Result4 },
     { path: '/result/202107', name: 'result', component: Result7 },
     { path: '/result/202108', name: 'result', component: Result8 },
+    { path: '/result/202109', name: 'result', component: Result9 },
   ]
 });
 

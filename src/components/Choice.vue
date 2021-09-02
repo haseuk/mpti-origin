@@ -56,15 +56,7 @@ export default {
           &.reverse {  transform: rotateY(180deg); }
           &.complete:after { .cnt; .f; .ib; .abs; .lt; .contain('/img/completed.png'); backface-visibility: hidden; }
           a { .rel; .f; .block; z-index: 1; }
-          &[data-month="202104"] {
-            .front { .contain('/img/front-img4.png'); }
-            .back { .contain('/img/back-img4.png'); }
-          }
-          &[data-month="202107"] {
-            .front { .contain('/img/front-img4.png'); }
-            .back { .contain('/img/back-img4.png'); }
-          }
-          &[data-month="202108"] {
+          &[data-month="202104"], &[data-month="202107"], &[data-month="202108"], &[data-month="202109"] {
             .front { .contain('/img/front-img4.png'); }
             .back { .contain('/img/back-img4.png'); }
           }

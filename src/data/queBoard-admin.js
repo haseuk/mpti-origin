@@ -349,5 +349,103 @@ export default {
       ],
     },
   },
-  202109: false,
+  202109: {
+    q1: {
+      part: { num: '1', q: '다음은 종근당 텔미트렌의 특장점에 대한 메시지입니다. 이 중 선생님께서 들어보신 경험이 있는 것을 모두 골라주세요.' },
+      examples: [
+        {idx: 'a', label: '종근당 텔미트렌은 20mg, 40mg, 80mg 세 가지 용량으로 보다 많은<br> 환자군에 다양한 용량 Option을 제공합니다.'},
+        {idx: 'b', label: '종근당 텔미트렌은 Telmsartan 성분으로 혈압변동성 지표인<br> Smoothness Index에서 우수한 개선 효과를 보입니다.<sup>2)</sup>'},
+        {idx: 'c', label: '종근당 텔미트렌은 Telmisartan 성분 기반, PPAR-γ partial agonist<br>로서 대사장애 동반 고혈압 환자의 치료 약물로 고려될 수 있습니다.<sup>3)</sup>'},
+        {idx: 'd', label: '종근당 텔미트렌은 전 용량 인습성을 개선하여 병포장을<br> 출시하였습니다.<sup>4)</sup>'},
+        {idx: 'e', label: '종근당 텔미트렌은 약제 크기 축소 및 분할선 추가 등 제형 개선을<br> 통해 환자의 복약순응도 개선에 도움을 줄 수 있습니다.'}
+      ],
+    },
+    q2: {
+      part: { num: 1_2, q: '다음 종근당 텔미트렌의 특장점에 대한 메시지 중 선생님께서 텔미트렌 처방을 고려하실 때 가장 중요하다고 생각하시는 메시지는 무엇입니까?'},
+      examples: [
+        {idx: 'a', label: '종근당 텔미트렌은 20mg, 40mg, 80mg 세 가지 용량으로 보다 많은<br> 환자군에 다양한 용량 Option을 제공합니다.'},
+        {idx: 'b', label: '종근당 텔미트렌은 Telmsartan 성분으로 혈압변동성 지표인<br> Smoothness Index에서 우수한 개선 효과를 보입니다.<sup>2)</sup>'},
+        {idx: 'c', label: '종근당 텔미트렌은 Telmisartan 성분 기반, PPAR-γ partial agonist<br>로서 대사장애 동반 고혈압 환자의 치료 약물로 고려될 수 있습니다.<sup>3)</sup>'},
+        {idx: 'd', label: '종근당 텔미트렌은 전 용량 인습성을 개선하여 병포장을<br> 출시하였습니다.<sup>4)</sup>'},
+        {idx: 'e', label: '종근당 텔미트렌은 약제 크기 축소 및 분할선 추가 등 제형 개선을<br> 통해 환자의 복약순응도 개선에 도움을 줄 수 있습니다.'}
+      ],
+    },
+    q3: {
+      part: { num: 1_3, q: '다음 종근당 텔미트렌의 특장점에 대한 메시지 중 선생님께서 텔미트렌 처방을 고려하실 때 가장 중요하지 않다고 생각하시는 메시지는 무엇입니까?'},
+      examples: [
+        {idx: 'a', label: '종근당 텔미트렌은 20mg, 40mg, 80mg 세 가지 용량으로 보다 많은<br> 환자군에 다양한 용량 Option을 제공합니다.'},
+        {idx: 'b', label: '종근당 텔미트렌은 Telmsartan 성분으로 혈압변동성 지표인<br> Smoothness Index에서 우수한 개선 효과를 보입니다.<sup>2)</sup>'},
+        {idx: 'c', label: '종근당 텔미트렌은 Telmisartan 성분 기반, PPAR-γ partial agonist<br>로서 대사장애 동반 고혈압 환자의 치료 약물로 고려될 수 있습니다.<sup>3)</sup>'},
+        {idx: 'd', label: '종근당 텔미트렌은 전 용량 인습성을 개선하여 병포장을<br> 출시하였습니다.<sup>4)</sup>'},
+        {idx: 'e', label: '종근당 텔미트렌은 약제 크기 축소 및 분할선 추가 등 제형 개선을<br> 통해 환자의 복약순응도 개선에 도움을 줄 수 있습니다.'}
+      ],
+    },
+    q4: {
+      part: { num: '2', q: '선생님께서는 텔미트렌 20mg을 처방해보신 경험이 있으신지요?' },
+      examples: [
+        {idx: 'a', next: 'q5', label: '있다'},
+        {idx: 'b', next: 'q9', label: '없다'}
+      ],
+    },
+    q5: {
+      part: { num: '2-1-1', q: '텔미트렌 20mg을 어떤 환자에게 처방하셨나요?' },
+      examples: [
+        {idx: 'a', label: '고혈압 초진환자'},
+        {idx: 'b', next: 'q6', label: '기존 ARB 복용 환자'},
+        {idx: 'c', label: '타 계열 고혈압제 복용 환자'},
+        {idx: 'd', label: '동반질환 (당뇨, 이상지질혈증 등) 보유환자'},
+        {idx: 'e', label: '기타'},
+      ],
+    },
+    q6: {
+      part: { num: '2-1-2', q: '텔미트렌 20mg은 어떤 ARB 제제를 대신하여 처방하셨나요?' },
+      examples: [
+        {idx: 'a', label: 'Losartan'},
+        {idx: 'b', label: 'Fimasartan'},
+        {idx: 'c', label: 'Telmisartan (40, 80mg)'},
+        {idx: 'd', label: 'Valsartan'},
+        {idx: 'e', label: 'Olmesartan'},
+        {idx: 'f', label: 'Candesartan'},
+        {idx: 'g', label: 'Azilsartan'},
+        {idx: 'h', label: '기타'},
+      ],
+    },
+    q7: {
+      part: { num: '2-1-3', q: '텔미트렌 20mg의 혈압 강하 효과에 대해 어떻게 생각하시나요? ' },
+      examples: [
+        {idx: 'a', label: '매우 충분하다'},
+        {idx: 'b', label: '충분하다'},
+        {idx: 'c', label: '보통이다'},
+        {idx: 'd', label: '부족하다'},
+        {idx: 'e', label: '매우 부족하다'},
+      ],
+    },
+    q8: {
+      part: { num: '2-1-4', q: '기존 텔미사르탄 제제와 비교해서 종근당 텔미트렌의 장점은 무엇이라고 생각하시나요?' },
+      examples: [
+        {idx: 'a', label: '성상의 특장점 (40. 80mg에 분할선 추가, 작은 약제 크기)'},
+        {idx: 'b', label: '인습성 개선 으로 편리한 조제 및 높은 복약순응도 향상 기대'},
+        {idx: 'c', label: '20mg, 40mg, 80mg 세 가지 용량으로 다양한 용량옵션 처방 가능'},
+        {idx: 'd', label: '신뢰할 수 있는 회사 제품'},
+        {idx: 'e', label: '기타'},
+      ],
+    },
+    q9: {
+      part: { num: '2-2-1', q: '텔미트렌 20mg을 처방하시지 않은 이유는 무엇인가요?' },
+      examples: [
+        {idx: 'a', label: '텔미트렌 20mg에 대해 들어본 적이 없어서'},
+        {idx: 'b', label: '20mg과 같은 저용량 제제 처방의 필요성을 못 느껴서'},
+        {idx: 'c', label: '어떤 환자에게 처방하면 좋을지 판단하기 곤란해서'},
+        {idx: 'd', label: '기타'},
+      ],
+    },
+    q10: {
+      part: { num: '2-2-2', q: '향후 텔미트렌 20mg을 처방하실 의향이 있으신가요?' },
+      examples: [
+        {idx: 'a', label: '있다'},
+        {idx: 'b', label: '없다'},
+        {idx: 'c', label: '잘 모르겠다'},
+      ],
+    },
+  },
 }
