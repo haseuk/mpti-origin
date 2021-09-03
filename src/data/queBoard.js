@@ -451,7 +451,7 @@ export default {
       aImg: 'm9-s-1-2.png',
       examples: [
         {idx: 'a', label: '종근당 텔미트렌은 20mg, 40mg, 80mg 세 가지 용량으로 보다 많은<br> 환자군에 다양한 용량 Option을 제공합니다.'},
-        {idx: 'b', label: '종근당 텔미트렌은 Telmsartan 성분으로 혈압변동성 지표인<br> Smoothness Index에서 우수한 개선 효과를 보입니다.<sup>2)</sup>'},
+        {idx: 'b', label: '종근당 텔미트렌은 Telmisartan 성분으로 혈압변동성 지표인<br> Smoothness Index에서 우수한 개선 효과를 보입니다.<sup>2)</sup>'},
         {idx: 'c', label: '종근당 텔미트렌은 Telmisartan 성분 기반, PPAR-γ partial agonist<br>로서 대사장애 동반 고혈압 환자의 치료 약물로 고려될 수 있습니다.<sup>3)</sup>'},
         {idx: 'd', label: '종근당 텔미트렌은 전 용량 인습성을 개선하여 병포장을<br> 출시하였습니다.<sup>4)</sup>'},
         {idx: 'e', label: '종근당 텔미트렌은 약제 크기 축소 및 분할선 추가 등 제형 개선을<br> 통해 환자의 복약순응도 개선에 도움을 줄 수 있습니다.'}
@@ -465,7 +465,7 @@ export default {
       aImg: 'm9-s-2-2.png',
       examples: [
         {idx: 'a', label: '종근당 텔미트렌은 20mg, 40mg, 80mg 세 가지 용량으로 보다 많은<br> 환자군에 다양한 용량 Option을 제공합니다.'},
-        {idx: 'b', label: '종근당 텔미트렌은 Telmsartan 성분으로 혈압변동성 지표인<br> Smoothness Index에서 우수한 개선 효과를 보입니다.<sup>2)</sup>'},
+        {idx: 'b', label: '종근당 텔미트렌은 Telmisartan 성분으로 혈압변동성 지표인<br> Smoothness Index에서 우수한 개선 효과를 보입니다.<sup>2)</sup>'},
         {idx: 'c', label: '종근당 텔미트렌은 Telmisartan 성분 기반, PPAR-γ partial agonist<br>로서 대사장애 동반 고혈압 환자의 치료 약물로 고려될 수 있습니다.<sup>3)</sup>'},
         {idx: 'd', label: '종근당 텔미트렌은 전 용량 인습성을 개선하여 병포장을<br> 출시하였습니다.<sup>4)</sup>'},
         {idx: 'e', label: '종근당 텔미트렌은 약제 크기 축소 및 분할선 추가 등 제형 개선을<br> 통해 환자의 복약순응도 개선에 도움을 줄 수 있습니다.'}
@@ -479,7 +479,7 @@ export default {
       aImg: 'm9-s-3-2.png',
       examples: [
         {idx: 'a', label: '종근당 텔미트렌은 20mg, 40mg, 80mg 세 가지 용량으로 보다 많은<br> 환자군에 다양한 용량 Option을 제공합니다.'},
-        {idx: 'b', label: '종근당 텔미트렌은 Telmsartan 성분으로 혈압변동성 지표인<br> Smoothness Index에서 우수한 개선 효과를 보입니다.<sup>2)</sup>'},
+        {idx: 'b', label: '종근당 텔미트렌은 Telmisartan 성분으로 혈압변동성 지표인<br> Smoothness Index에서 우수한 개선 효과를 보입니다.<sup>2)</sup>'},
         {idx: 'c', label: '종근당 텔미트렌은 Telmisartan 성분 기반, PPAR-γ partial agonist<br>로서 대사장애 동반 고혈압 환자의 치료 약물로 고려될 수 있습니다.<sup>3)</sup>'},
         {idx: 'd', label: '종근당 텔미트렌은 전 용량 인습성을 개선하여 병포장을<br> 출시하였습니다.<sup>4)</sup>'},
         {idx: 'e', label: '종근당 텔미트렌은 약제 크기 축소 및 분할선 추가 등 제형 개선을<br> 통해 환자의 복약순응도 개선에 도움을 줄 수 있습니다.'}
