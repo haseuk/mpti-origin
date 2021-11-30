@@ -2,10 +2,10 @@
   <div event>
     <transition name="fade">
       <div>
-        <img src="/img/event2.png" alt="">
-        <img src="/img/wheel.png" class="wheel" :style="spinValue">
-        <img src="/img/arrow.png" class="arrow">
-        <a class="event-btn btn" @click="check">참여하기</a>
+        <img src="/img/event3.png" alt="">
+<!--        <img src="/img/wheel.png" class="wheel" :style="spinValue">-->
+<!--        <img src="/img/arrow.png" class="arrow">-->
+<!--        <a class="event-btn btn" @click="check">참여하기</a>-->
         <RouterLink :to="`/result/${month}`" class="result-btn btn">결과보기</RouterLink>
         <a href="/" class="home">홈으로 가기</a>
       </div>

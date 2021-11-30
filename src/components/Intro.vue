@@ -2,17 +2,17 @@
   <div intro>
     <transition name="fade">
       <div v-if="page === 'intro'" :key="1" class="intro">
-        <img src="/img/intro-main.png" alt="mpti에 오신걸 환영합니다.">
+        <img src="/img/intro-main1.png" alt="mpti에 오신걸 환영합니다.">
         <a class="start" @click="page = 'code'">참여하기</a>
       </div>
       <div v-else-if="page === 'code'" :key="2" class="code">
-        <img src="/img/intro-codechk.png" alt="코드/성함 입력">
+        <img src="/img/intro-codechk1.png" alt="코드/성함 입력">
         <label>
           코드 <input type="text" v-model="hospitalCode" class="code" placeholder="숫자 8자리">
           의사명 <input type="text" v-model="name" class="name" placeholder="O O O">
           <a class="submit" @click="submit">확인</a>
         </label>
-        <a class="next" @click="page = 'input'">다음</a>
+<!--        <a class="next" @click="page = 'input'">다음</a>-->
       </div>
       <div v-else-if="page === 'input'" :key="3" class="input">
         <img src="/img/intro-entercode.png" alt="병원명/과명/성함 입력">
